@@ -8,7 +8,3 @@ Homestead.json
 /vendor
 node_modules/
 npm-debug.log
-public/js/app.js
-webpack.mix.js
-resources/assets/js/app.js
-resources/assets/js/bootstrap.js
