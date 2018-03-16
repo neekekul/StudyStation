@@ -3,6 +3,11 @@
         <h1>Sign Up</h1>
     </div>
     <div id="head">
+
+                @if (isset($msg))
+                    {{$msg;}}
+                @endif
+
             <form method="post" id="registrate" style="margin:0 auto; width:75%;">
                <br>
                <br>

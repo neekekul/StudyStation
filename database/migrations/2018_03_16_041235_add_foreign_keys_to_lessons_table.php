@@ -14,7 +14,7 @@ class AddForeignKeysToLessonsTable extends Migration {
 	{
 		Schema::table('lessons', function(Blueprint $table)
 		{
-			$table->foreign('instructor_id', 'creator')->references('id')->on('instructor')->onUpdate('RESTRICT')->onDelete('RESTRICT');
+			$table->foreign('instructor_id', 'creator')->references('id')->on('instructors')->onUpdate('RESTRICT')->onDelete('RESTRICT');
 		});
 	}
 
