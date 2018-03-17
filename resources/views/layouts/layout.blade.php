@@ -21,3 +21,10 @@
 	<![endif]-->
 </head>
 <body id="okay">
+
+
+    @yield('content')
+
+
+</body>
+</html>

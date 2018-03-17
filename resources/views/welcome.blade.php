@@ -1,4 +1,8 @@
-@include('main.header')
+@extends('layouts.layout')
+
+
+
+@section('content')
     <div class="main">
         <h1>Study Station</h1>
     </div>
@@ -14,4 +18,4 @@
             <button type="submit" class="btn btn-primary btn-lg btn-block" style="height:4vw;">REGISTER</button>
         </form>
 </div>
-@include('main.footer')
+@endsection

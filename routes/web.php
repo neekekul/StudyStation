@@ -11,6 +11,8 @@
 |
 */
 
+use App\Instructor;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,12 +25,8 @@ Route::get('/instructorLogin', function () {
     return view('instructorLogin');
 });
 
-Route::get('/registration', function () {
-    return view('registration');
-});
-
+Route::get('/registration', 'Auth\RegisterController@create');
+Route::post('/registration', 'Auth\RegisterController@store');
 
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

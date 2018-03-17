@@ -1,14 +1,20 @@
-@include('main.header')
+@extends('layouts.layout')
+
+
+@section('content')
     <div class="main">
         <h1>Sign Up</h1>
     </div>
     <div id="head">
 
                 @if (isset($msg))
-                    {{$msg;}}
+                    {{ $msg }}
                 @endif
 
-            <form method="post" id="registrate" style="margin:0 auto; width:75%;">
+            <form method="post" action="/registration" id="registrate" style="margin:0 auto; width:75%;">
+
+                {{ csrf_field() }}
+
                <br>
                <br>
                 <div class="form-group">
@@ -42,4 +48,4 @@
                 <button class="btn btn-default btn-lg btn-block">HOME</button>
             </form>
     </div>
-@include('main.footer')
+@endsection

@@ -1,4 +1,7 @@
-@include('main.header')
+@extends('layouts.layout')
+
+
+@section('content')
   <div class="main">
         <h1>Student Sign In</h1>
     </div>
@@ -23,4 +26,4 @@
             </form>
 
    </div>
-@include('main.footer')
+@endsection

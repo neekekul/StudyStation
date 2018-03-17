@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateLessonsTable extends Migration {
+class CreateInstructorsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,13 @@ class CreateLessonsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('lessons', function(Blueprint $table)
+		Schema::create('instructors', function(Blueprint $table)
 		{
 			$table->bigInteger('id', true);
-			$table->bigInteger('instructor_id')->index('instructor_id');
-			$table->string('title', 60);
-			$table->text('body');
-			$table->text('note', 65535);
+			$table->string('username', 60);
+			$table->string('email', 60);
+			$table->string('password');
+			$table->timestamps();
 		});
 	}
 
@@ -30,7 +30,7 @@ class CreateLessonsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('lessons');
+		Schema::drop('instructors');
 	}
 
 }
