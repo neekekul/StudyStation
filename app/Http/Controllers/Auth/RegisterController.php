@@ -72,60 +72,101 @@ class RegisterController extends Controller
 
     public function store(){
 
+        //first completely validate the users input
+        $this->validate(request(), [
+
+            'type' => 'required|string|alpha|max:11',
+            'username' => 'required|string|alpha_num|max:60',
+            'email' => 'required|email|string|max:60',
+            'password' => 'required|string|alpha_num|min:6|max:100|confirmed',
+            'password_confirmation' => 'required|string|alpha_num|min:6|max:100',
+        ]);
+
+        //pull all validated inputs into variables
         $username = request('username');
 
         $email = request('email');
 
         $password = request('password');
 
-        $passCheck = request('passwordCheck');
+        $passCheck = request('password_confirmation');
 
         $type = request('type');
 
+        //These are the two string possibilities for 'type'
         $stu = 'student';
 
         $ins = 'instructor';
 
+        //count how many instances of the input email address is in the Students table
         $countStu = Student::where('email', $email)->count();
 
+        //count how many instances of the input email address is in the Instructors table
         $countIns = Instructor::where('email', $email)->count();
 
-        if($password == $passCheck && strlen($password) <= 100){
-            $hashed = Hash::make($password);
+        //hash the validated password
+        $hashed = Hash::make($password);
 
-                if($type == $stu){
-                    $guest = new Student;
-                    $guest->username = $username;
-                    $guest->email = $email;
-                    $guest->password = $hashed;
+        //if the user is creating a student account
+        if($type == $stu){
 
-                    if($countStu == 0 && strlen($email)<=60 && strlen($username)<=60 && strlen($type)<=11){
-                        $guest->save();
-                        $msg = "<div class='alert'>Successfully Registered!</div>";
-                    }
-                    else{
-                        $msg = "<div class='alert'>ERROR Registering</div>";
-                    }
+            //guest is made using the Student model
+            $guest = new Student;
+            //Student model is appropriately populated with the values designed above
+            $guest->username = $username;
+            $guest->email = $email;
+            $guest->password = $hashed;
+
+            //if there are no accounts with the same email address
+            if($countStu == 0){
+
+                //if the model is successfully saved to the database
+                if($guest->save()){
+                    //set a success message
+                    $msg = "Successfully Registered!";
                 }
-                else if($type == $ins) {
-                    $guest = new Instructor;
-                    $guest->username = $username;
-                    $guest->email = $email;
-                    $guest->password = $hashed;
-
-                    if($countIns == 0 && strlen($email)<=60 && strlen($username)<=60 && strlen($type)<=11){
-                        $guest->save();
-                        $msg = "<div class='alert'>Successfully Registered!</div>";
-                    }
-                    else{
-                        $msg = "<div class='alert'>ERROR Registering</div>";
-                    }
+                else{
+                    //set a failure message
+                    $msg = "ERROR Registering...";
                 }
-        }
-        else{
-            $msg = "<div class='alert'>The passwords you entered do not match!</div>";
+
+            }else{
+                //set a failure message
+                $msg = "The account that you are registering already exists.";
+            }
         }
 
-        return view('/registration');
+        //otherwise if the user is creating a instructor account
+        else if($type == $ins) {
+
+            //guest is made using the Instructor model
+            $guest = new Instructor;
+
+            //Instructor model is appropriately populated with the values designed above
+            $guest->username = $username;
+            $guest->email = $email;
+            $guest->password = $hashed;
+
+            //if there are no accounts with the same email address
+            if($countIns == 0){
+
+                //if the model is successfully saved to the database
+                if($guest->save()){
+                    //set a success message
+                    $msg = "Successfully Registered!";
+                }
+                else{
+                    //set a failure message
+                    $msg = "ERROR Registering...";
+                }
+            }else{
+                //set a failure message
+                $msg = "The account that you are registering already exists.";
+            }
+        }
+
+        //return the same view, so the same registration page will show again.
+        //Only this time it has the $msg sent through
+        return view('/registration', compact('msg'));
     }
 }

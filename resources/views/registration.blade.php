@@ -7,9 +7,7 @@
     </div>
     <div id="head">
 
-                @if (isset($msg))
-                    {{ $msg }}
-                @endif
+                @include('layouts.message')
 
             <form method="post" action="/registration" id="registrate" style="margin:0 auto; width:75%;">
 
@@ -38,14 +36,28 @@
                 </div>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                    <input id="passwordCheck" type="password" class="form-control" name="passwordCheck" placeholder="Re-enter Password" autocomplete="Off" maxlength="100" required>
+                    <input id="passwordCheck" type="password" class="form-control" name="password_confirmation" placeholder="Re-enter Password" autocomplete="Off" maxlength="100" required>
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary btn-lg btn-block" name="signed">Sign Up</button>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" name="signed">Sign Up</button>
+                </div>
+
+                @include('layouts.errors')
+
             </form>
+
+            <br>
+            <br>
+            <br>
+            <br>
+
             <h3>Already have an account? Click the button below to sign in!</h3>
+
+
             <form action="/" method="GET" style="margin:0 auto; width:75%; margin-top:-18vw;">
-                <button class="btn btn-default btn-lg btn-block">HOME</button>
+
+                    <button class="btn btn-default btn-lg btn-block">HOME</button>
             </form>
     </div>
 @endsection

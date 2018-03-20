@@ -11,8 +11,6 @@
 |
 */
 
-use App\Instructor;
-
 Route::get('/', function () {
     return view('welcome');
 });
