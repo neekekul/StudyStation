@@ -43,6 +43,7 @@
                     <button type="submit" class="btn btn-primary btn-lg btn-block" name="signed">Sign Up</button>
                 </div>
 
+
                 @include('layouts.errors')
 
             </form>
