@@ -15,6 +15,7 @@
 
                <br>
                <br>
+
                 <div class="form-group">
                     <label for="sel1">Select list: (select one)</label>
                     <select class="form-control" id="sel1" name="type" required>
@@ -48,17 +49,14 @@
 
             </form>
 
-            <br>
-            <br>
-            <br>
-            <br>
+            <div class="container-fluid" style="margin-top:3vw">
+                <h3>Already have an account? Click the button below to sign in!</h3>
+            </div>
 
-            <h3>Already have an account? Click the button below to sign in!</h3>
-
-
-            <form action="/" method="GET" style="margin:0 auto; width:75%; margin-top:-18vw;">
-
+            <form action="/" method="GET" style="margin:0 auto; width:75%; margin-top:3vw;">
+                <div class="form-group">
                     <button class="btn btn-default btn-lg btn-block">HOME</button>
+                </div>
             </form>
     </div>
 @endsection
