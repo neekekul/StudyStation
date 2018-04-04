@@ -37,7 +37,7 @@ body{
 }
 
 #vert .container{
-    background-color: aquamarine;
+    background-color: #FFFFFF;
     margin-left: 11vw;
     width: 100%;
     height: 100%;
@@ -68,7 +68,7 @@ body{
     width: 5vw;
     height: 5vw;
     margin-top: -4.94vw;
-    margin-right: -1.94vw;
+    margin-right: -30vw;
 }
 
 .container-fluid #home .btn{

@@ -12,7 +12,7 @@
             </ul>
         </div>
         <h1><strong>{{ auth()->user()->type }}</strong></h1>
-        <form method="post" style="width: 20vw; float: right; margin-top: -3.5vw; margin-right: 2vw;">
+        <form method="post" style="width: 20vw; float: right; margin-top: -3.5vw; margin-right: 7vw;">
            {{ csrf_field() }}
             <div class="input-group" style="width: 15vw;">
                 <input id="email" type="text" class="form-control" name="search" placeholder="Search" autocomplete="On" maxlength="300">
@@ -60,9 +60,6 @@
             <a href="#" target="hub"></a>
 
 
-        </div>
-        <div class="container">
-            <iframe name="hub"></iframe>
         </div>
     </div>
 @endsection
