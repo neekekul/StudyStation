@@ -3,7 +3,7 @@
 
 @section('content')
   <div class="main">
-        <h1>Instructor Log In</h1>
+        <h1>Login</h1>
     </div>
    <div id="head">
        @include('layouts.message')
@@ -22,7 +22,7 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Log In</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
                 </div>
                 @include('layouts.errors')
         </form>
