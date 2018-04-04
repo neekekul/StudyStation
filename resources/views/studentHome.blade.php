@@ -12,11 +12,11 @@
             </ul>
         </div>
         <h1><strong>{{ auth()->user()->type }}</strong></h1>
-        <form method="post">
+        <form method="post" style="width: 20vw; float: right; margin-top: -3.5vw; margin-right: 2vw;">
            {{ csrf_field() }}
-            <div class="input-group">
-                    <input id="email" type="text" class="form-control" name="search" placeholder="Search" autocomplete="On" maxlength="300">
-                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            <div class="input-group" style="width: 15vw;">
+                <input id="email" type="text" class="form-control" name="search" placeholder="Search" autocomplete="On" maxlength="300">
+                <button class="btn btn-default" type="submit" style="margin-top: 0vw; margin-right: -2.35vw; float: right;"><i class="glyphicon glyphicon-search"></i></button>
             </div>
         </form>
         <div class="dropdown" id="home">
