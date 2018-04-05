@@ -1,54 +1,64 @@
-body{
+#okay{
     background-color: #FFFFFF;
     max-width: 100%;
     overflow-x: hidden;
+    font-family: clone-rounded-latin, sans-serif;
+    font-style: normal;
+    font-weight: 600;
 }
 
 .container-fluid{
-    background-color: #4E78A0;
+    background-color: #3a464b;
     height: 5vw;
-    font-family: Urbana, sans-serif;
-    font-style: normal;
-    font-weight: 600;
 }
 
 #meat{
     background-color: #eeeeee;
-    height: 53vw;
-    font-family: Urbana, sans-serif;
-    font-style: normal;
-    font-weight: 600;
+    height: 54vw;
+}
+
+#meat form{
+    float: left;
+    width: 100%;
+}
+
+#meat form button{
+    width: 100%;
+    height: 4vw;
+}
+
+#meat form #one{
+    margin-top: 5vw;
+}
+
+#meat form #two #body{
+    height: 25vw;
+}
+
+#meat form #three #note{
+    height: 10vw;
 }
 
 .container-fluid h1{
-    margin-left: 30%;
+    margin-left: 30.5%;
     margin-top: -3.94vw;
     width: 40vw;
     text-align: center;
-    color: #2a2a2a;
+    color: white;
     font-size: 3vw;
 }
 
 #vert{
     background-color: #eeeeee;
-    height: 52.8vw;
+    height: 54vw;
     width: 100%;
     margin-top: .009vw;
 }
 
 #vert .container{
-    background-color: #FFFFFF;
     margin-left: 11vw;
     width: 100%;
     height: 100%;
-}
-
-#vert .container iframe{
-    background-color: #eeeeee;
-    margin-left: -1vw;
-    margin-top: -.1vw;
-    height: 100%;
-    width: 100%;
 }
 
 .container-fluid .dropdoown{
@@ -57,18 +67,22 @@ body{
 }
 
 .container-fluid .dropdown .btn{
-    margin-left: -.99vw;
+    margin-left: -1.09vw;
     height: 5vw;
     width: 5vw;
     background-color: #2a2a2a;
+}
+
+.container-fluid .dropdown .btn span{
+    color: #8bc34a;
 }
 
 .container-fluid #home{
     float: right;
     width: 5vw;
     height: 5vw;
-    margin-top: -4.94vw;
-    margin-right: -30vw;
+    margin-top: -5.09vw;
+    margin-right: -2.18vw;
 }
 
 .container-fluid #home .btn{
@@ -82,18 +96,40 @@ body{
     margin-right: 0vw;
 }
 
+.container-fluid #home a button span{
+    color: #8bc34a;
+}
+
+.container-fluid form{
+    width: 20vw;
+    float: right;
+    margin-top: -3.9vw;
+    margin-right: 11vw;
+}
+
+.container-fluid form .input-group{
+    width: 20vw;
+}
+
+.container-fluid form .input-group button{
+    margin-top: 0vw;
+    margin-right: -3vw;
+    float: right;
+}
+
 .vertical-menu {
+    background-color: #464b3a;
     float: left;
-    width: 12vw;
-    height: 52.8vw;
-    margin-left: -1vw;
+    width: 11vw;
+    height: 54vw;
+    margin-left: -1.1vw;
     margin-top: 0vw;
     overflow-y: auto;
 }
 
 .vertical-menu a {
-    background-color: #eeeeee;
-    color: black;
+    background-color: #464b3a;
+    color: white;
     display: block;
     padding: 12px;
     text-decoration: none;

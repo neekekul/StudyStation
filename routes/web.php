@@ -25,4 +25,7 @@ Route::get('/logout', 'LoginController@destroy');
 
 Route::get('/home', 'HomeController@show');
 
+Route::get('/lessonCreator', 'InstructorController@lessonCreate');
+Route::post('/lessonCreator', 'InstructorController@lessonShow');
+
 Auth::routes();

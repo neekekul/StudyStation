@@ -12,50 +12,51 @@
             </ul>
         </div>
         <h1><strong>{{ auth()->user()->username }}</strong></h1>
+        <form method="post">
+           {{ csrf_field() }}
+            <div class="input-group">
+                <input id="email" type="text" class="form-control" name="search" placeholder="Search" autocomplete="On" maxlength="300">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+        </form>
         <div class="dropdown" id="home">
-            <a href="_home.php" target="_self">
+            <a href="home" target="_self">
                 <button class="btn btn-link dropdown-toggle" type="button"><span class="glyphicon glyphicon-home"></span></button>
             </a>
         </div>
     </div>
     <div class="container-fluid" id="vert">
         <div class="vertical-menu">
-            <a href="_home.php" target="hub">myCourses</a>
-            <a href="#" target="hub">myStudents</a>
-            <a href="lessonFactory.php" target="hub">lessonFactory</a>
-            <a href="#" target="hub">quizFactory</a>
-            <a href="#" target="hub">courseTimelines</a>
-            <a href="#" target="hub">studentReports</a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-
-
-        </div>
-        <div class="container">
-            <iframe name="hub"></iframe>
+            <a href="lessonCreator">Lesson Creator</a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
         </div>
     </div>
 @endsection
