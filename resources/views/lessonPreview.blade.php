@@ -19,9 +19,20 @@
             </a>
             </div>
         </div>
+        <div id="meat" class="container-fluid">
         {{ $title }}
+        <br>
         {{ $body }}
+        <br>
         {{ $note }}
-
+        <br>
+        <form action="/lessonPreview" method="post" style="margin-top: 5vw;">
+               {{ csrf_field() }}
+                <div class="form-group">
+                <button type="submit" class="btn btn-primary"><strong>SUBMIT</strong></button>
+                </div>
+                @include('layouts.errors')
+            </form>
+</div>
 </div>
 @endsection

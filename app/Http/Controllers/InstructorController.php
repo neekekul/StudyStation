@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Lesson;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 
 class InstructorController extends Controller
 {
+
     //
     public function __construct()
     {
@@ -34,9 +37,17 @@ class InstructorController extends Controller
         $body = request('body');
         $note = request('note');
 
-        return view('lessonPreview', compact('title', 'body', 'note'));
+        $lesson = new Lesson;
+        $lesson->instructor_id = auth()->user()->id;
+        $lesson->title = $title;
+        $lesson->body = $body;
+        $lesson->summary = $note;
+        $lesson->save();
+
+        return view('instructorHome');
 
     }
+
 
     public function destroy(){
 

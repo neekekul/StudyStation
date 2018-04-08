@@ -32,12 +32,6 @@
         <form action="registration" method="GET" style="margin:0 auto; width:75%; height:10vw; margin-top:3vw;">
                 <button class="btn btn-default btn-lg btn-block">REGISTER</button>
             </form>
-        <div class="container-fluid" style="margin-top:0vw">
-            <h3>Have a student account? Click the button below!</h3>
-        </div>
-        <form action="studentLogin" method="GET" style="margin:0 auto; width:75%; margin-top:3vw;">
-                <button class="btn btn-default btn-lg btn-block">STUDENT LOGIN</button>
-            </form>
 
    </div>
 @endsection
