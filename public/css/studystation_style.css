@@ -27,7 +27,7 @@
 #head{
 	width: 100%;
     background-color: transparent;
-	height: 37.5vw;
+	height: 20vw;
     margin-top: 1vw;
 	color: black;
 	text-align: center;
@@ -35,9 +35,6 @@
 }
 
 #head h1{
-    font-family: Urbana, sans-serif;
-    font-style: normal;
-    font-weight: 600;
     text-align: center;
     color: black;
     font-size: 6vw;

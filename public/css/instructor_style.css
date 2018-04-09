@@ -1,0 +1,146 @@
+#okay{
+    background-color: #FFFFFF;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: clone-rounded-latin, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.container-fluid{
+    background-color: #3a464b;
+    height: 5vw;
+}
+
+#meat{
+    background-color: #eeeeee;
+    height: 61vw;
+}
+
+#meat form{
+    float: left;
+    width: 100%;
+}
+
+#meat form button{
+    width: 100%;
+    height: 4vw;
+}
+
+#meat form #one{
+    margin-top: 5vw;
+}
+
+#meat form #two #body{
+    height: 25vw;
+}
+
+#meat form #three #note{
+    height: 10vw;
+}
+
+.container-fluid h1{
+    margin-left: 29%;
+    margin-top: -3.94vw;
+    width: 40vw;
+    text-align: center;
+    color: white;
+    font-size: 3vw;
+}
+
+#vert{
+    background-color: #eeeeee;
+    height: 54vw;
+    width: 100%;
+    margin-top: .009vw;
+}
+
+#vert .container{
+    margin-left: 11vw;
+    width: 100%;
+    height: 100%;
+}
+
+.container-fluid .dropdoown{
+    float: left;
+    background-color: aqua;
+}
+
+.container-fluid .dropdown .btn{
+    margin-left: -1.09vw;
+    height: 5vw;
+    width: 5vw;
+    background-color: #2a2a2a;
+}
+
+.container-fluid .dropdown .btn span{
+    color: #8bc34a;
+}
+
+.container-fluid #home{
+    float: right;
+    width: 5vw;
+    height: 5vw;
+    margin-top: -5.09vw;
+    margin-right: -2.18vw;
+}
+
+.container-fluid #home .btn{
+    margin-right: 0vw;
+    height: 5vw;
+    width: 5vw;
+    background-color: #2a2a2a;
+}
+
+.container-fluid #home a{
+    margin-right: 0vw;
+}
+
+.container-fluid #home a button span{
+    color: #8bc34a;
+}
+
+.container-fluid form{
+    width: 20vw;
+    float: right;
+    margin-top: -3.9vw;
+    margin-right: 11vw;
+}
+
+.container-fluid form .input-group{
+    width: 20vw;
+}
+
+.container-fluid form .input-group button{
+    margin-top: 0vw;
+    margin-right: -3vw;
+    float: right;
+}
+
+.vertical-menu {
+    background-color: #4b3a46;
+    box-shadow: 2px 2px 10px 2px rgba(0,0,0,.30), 2px 2px 10px 2px rgba(0,0,0,.30);
+    float: left;
+    width: 11vw;
+    height: 52vw;
+    margin-left: -1.1vw;
+    margin-top: .5vw;
+    overflow-y: auto;
+}
+
+.vertical-menu a {
+    background-color: #4b3a46;
+    color: white;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu a:hover {
+    background-color: #cccccc;
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
+}

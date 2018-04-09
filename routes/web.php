@@ -15,16 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/studentLogin', function () {
-    return view('studentLogin');
-});
+Route::get('/instructorLogin', 'LoginController@onInstructorCreate');
+Route::post('/instructorLogin','LoginController@instructorSession');
 
-Route::get('/instructorLogin', function () {
-    return view('instructorLogin');
-});
+Route::get('/registration', 'RegisterController@create');
+Route::post('/registration', 'RegisterController@store');
 
-Route::get('/registration', 'Auth\RegisterController@create');
-Route::post('/registration', 'Auth\RegisterController@store');
+Route::get('/logout', 'LoginController@destroy');
 
+Route::get('/home', 'HomeController@show');
+
+Route::get('/lessonCreator', 'InstructorController@lessonCreate');
+Route::post('/lessonCreator', 'InstructorController@lessonShow');
 
 Auth::routes();

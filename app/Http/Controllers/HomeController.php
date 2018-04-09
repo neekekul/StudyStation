@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -13,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth')->except('destroy');
     }
 
     /**
@@ -21,8 +23,14 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function show()
     {
-        return view('welcome');
+
+        if (auth()->user()->type == 'instructor'){
+            return view('instructorHome');
+        }
+        else{
+            return view('studentHome');
+        }
     }
 }
