@@ -22,6 +22,17 @@
         <div id="meat" class="container-fluid">
             <form action="/lessonCreator" method="post">
                {{ csrf_field() }}
+               @include('layouts.message')
+               <div class="form-group" id="select">
+                    <label for="sel1">Select Course: (select one)</label>
+                    <select class="form-control" id="sel1" name="course" required>
+    		            @foreach ($courses->all() as $course)
+                            <option>
+                                {{ $course }}
+                            </option>
+                        @endforeach
+  		            </select>
+                </div>
                 <div class="form-group" id="one">
                     <label for="title">Title:</label>
                     <input type="text" class="form-control" id="title" name="title" maxlength="100" autocomplete="Off">

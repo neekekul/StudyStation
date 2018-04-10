@@ -28,7 +28,7 @@
     <div class="container-fluid" id="vert">
         <div class="vertical-menu">
             <a href="lessonCreator">Lesson Creator</a>
-            <a href="#"></a>
+            <a href="courseCreator">Course Creator</a>
             <a href="#"></a>
             <a href="#"></a>
             <a href="#"></a>
