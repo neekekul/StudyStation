@@ -23,19 +23,17 @@
             <form action="/courseCreator" method="post">
                {{ csrf_field() }}
                @include('layouts.message')
-                @if (count($names))
                     <div class="form-group" id="select">
                                 <div class="alert alert-info">
                                     <ul>
-                                        @foreach ($names as $name)
+                                        @foreach ($courses as $course)
                                             <li>
-                                                {{ $name }}
+                                                {{ $course }}
                                             </li>
                                         @endforeach
                                     </ul>
                         </div>
                     </div>
-                @endif
                 <div class="form-group" id="one">
                     <label for="title">Name:</label>
                     <input type="text" class="form-control" id="title" name="name" maxlength="100" autocomplete="Off">

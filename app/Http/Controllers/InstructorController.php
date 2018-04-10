@@ -28,12 +28,9 @@ class InstructorController extends Controller
 
     public function courseCreate(){
         $courses = Course::select('name')->where('instructor_id', '=', auth()->user()->id)->get();
-        $names = $courses->filter(function($item) {
-                        return $item->name;
-        })->all();
 
 
-        return view('courseCreator', compact('names'));
+        return view('courseCreator', compact('courses'));
     }
 
     public function lessonStore(){
