@@ -4,12 +4,12 @@
 @section('content')
 <div class="container-fluid">
             <div class="dropdown">
-                <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></button>
+                <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="#">Help</a></li>
                     <li><a href="#">Edit Account</a></li>
                     <li class="divider"></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="logout">Logout</a></li>
                 </ul>
             </div>
             <h1><strong>Course Creator</strong></h1>
@@ -26,10 +26,12 @@
                    @if(count($courses))
                     <div class="form-group" id="select">
                                 <div class="alert alert-info">
-                                    <ul>
+                                    <ul class="list-group">
+                                       <h2 class="list-group-header"><strong>{{ auth()->user()->username }}s Courses</strong></h2>
                                         @foreach ($courses as $course)
-                                            <li>
+                                            <li class="list-group-item">
                                                 {{ $course->name  }}
+                                                <span class="badge">{{ $course->id }}</span>
                                             </li>
                                         @endforeach
                                     </ul>

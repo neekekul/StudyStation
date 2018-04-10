@@ -27,7 +27,7 @@ class InstructorController extends Controller
     }
 
     public function courseCreate(){
-        $courses = Course::select('name', 'instructor_id')->where('instructor_id', '=', auth()->user()->id)->get();
+        $courses = Course::select('name', 'instructor_id', 'id')->where('instructor_id', '=', auth()->user()->id)->get();
 
 
         return view('courseCreator', compact('courses'));

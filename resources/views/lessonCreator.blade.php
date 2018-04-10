@@ -4,12 +4,12 @@
 @section('content')
 <div class="container-fluid">
             <div class="dropdown">
-                <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></button>
+                <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="#">Help</a></li>
                     <li><a href="#">Edit Account</a></li>
                     <li class="divider"></li>
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="logout">Logout</a></li>
                 </ul>
             </div>
             <h1><strong>Lesson Creator</strong></h1>
