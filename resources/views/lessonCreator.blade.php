@@ -26,9 +26,9 @@
                <div class="form-group" id="select">
                     <label for="sel1">Select Course: (select one)</label>
                     <select class="form-control" id="sel1" name="course" required>
-    		            @foreach ($courses->all() as $course)
-                            <option>
-                                {{ $course }}
+    		            @foreach ($courses as $course)
+                            <option value="{{ $course->id }}">
+                                {{ $course->name }}
                             </option>
                         @endforeach
   		            </select>

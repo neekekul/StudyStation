@@ -21,13 +21,13 @@ class InstructorController extends Controller
 
     public function lessonCreate(){
 
-        $courses = Course::select('name')->where('instructor_id', '=', auth()->user()->id)->get();
+        $courses = Course::select('name', 'id')->where('instructor_id', '=', auth()->user()->id)->get();
 
         return view('lessonCreator', compact('courses'));
     }
 
     public function courseCreate(){
-        $courses = Course::select('name')->where('instructor_id', '=', auth()->user()->id)->get();
+        $courses = Course::select('name', 'instructor_id')->where('instructor_id', '=', auth()->user()->id)->get();
 
 
         return view('courseCreator', compact('courses'));
@@ -38,27 +38,33 @@ class InstructorController extends Controller
         //first completely validate the users input
         $this->validate(request(), [
 
+            'course' => 'required|integer',
             'title' => 'required|string|alpha_num|max:100',
             'body' => 'required|string|max:13000',
             'note' => 'string|max:700',
         ]);
 
+        $courses = Course::select('name', 'id')->where('instructor_id', '=', auth()->user()->id)->get();
+
         //pull the fields into php variables
+        $courseID = request('course');
         $title = request('title');
         $body = request('body');
         $note = request('note');
         $msg = '';
 
         $lesson = new Lesson;
-        $lesson->course_id = auth()->user()->id;
+        $lesson->course_id = $courseID;
         $lesson->title = $title;
         $lesson->body = $body;
         $lesson->summary = $note;
         if ($lesson->save()){
             $msg = 'Lesson has been saved!';
+        }else{
+            $msg = 'Lesson has failed to be saved correctly.';
         }
 
-        return view('lessonCreator', compact('msg'));
+        return view('lessonCreator', compact('msg', 'courses'));
 
     }
 
