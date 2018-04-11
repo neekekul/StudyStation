@@ -12,6 +12,11 @@
     height: 5vw;
 }
 
+#okay #ereg{
+    background-color: #eeeeee;
+    margin-top: 0vw;
+}
+
 #meat{
     background-color: #eeeeee;
     height: 61vw;
@@ -38,6 +43,10 @@
 
 #meat form #one{
     margin-top: 5vw;
+}
+
+#meat form #ename{
+    margin-top: 20vw;
 }
 
 #meat form #two #body{

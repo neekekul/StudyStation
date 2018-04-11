@@ -31,4 +31,10 @@ Route::post('/lessonCreator', 'InstructorController@lessonStore');
 Route::get('/courseCreator', 'InstructorController@courseCreate');
 Route::post('/courseCreator', 'InstructorController@courseStore');
 
+Route::get('/editInstructor', 'InstructorController@editCreate');
+Route::post('/editInstructor', 'InstructorController@editStore');
+
+Route::get('/courseViewer', 'InstructorController@courseShow');
+Route::get('/courseViewer/courseGuts', 'InstructorController@courseGuts');
+
 Auth::routes();

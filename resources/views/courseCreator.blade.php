@@ -7,7 +7,7 @@
                 <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="#">Help</a></li>
-                    <li><a href="#">Edit Account</a></li>
+                    <li><a href="editInstructor">Edit Account</a></li>
                     <li class="divider"></li>
                     <li><a href="logout">Logout</a></li>
                 </ul>
@@ -25,11 +25,11 @@
                @include('layouts.message')
                    @if(count($courses))
                     <div class="form-group" id="select">
-                                <div class="alert alert-info">
+                                <div class="alert alert-success">
                                     <ul class="list-group">
-                                       <h2 class="list-group-header"><strong>{{ auth()->user()->username }}s Courses</strong></h2>
+                                       <h2 class="list-group-header" style="text-align: center;"><strong>{{ auth()->user()->username }}s Courses</strong></h2>
                                         @foreach ($courses as $course)
-                                            <li class="list-group-item">
+                                            <li class="list-group-item" style="background-color: #3a464b; color: white;">
                                                 {{ $course->name  }}
                                                 <span class="badge">{{ $course->id }}</span>
                                             </li>
@@ -49,5 +49,4 @@
             </form>
 
         </div>
-</div>
 @endsection

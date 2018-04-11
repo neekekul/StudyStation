@@ -33,6 +33,33 @@ class InstructorController extends Controller
         return view('courseCreator', compact('courses'));
     }
 
+    public function editCreate(){
+        return view('editInstructor');
+    }
+
+    public function courseShow(){
+        $courses = Course::select('name', 'instructor_id', 'id')->where('instructor_id', '=', auth()->user()->id)->get();
+
+        return view('courseViewer', compact('courses'));
+
+    }
+
+    public function courseGuts(){
+        //first completely validate the users input
+        $this->validate(request(), [
+
+            'course' => 'required|integer',
+        ]);
+
+        $courseID = request('course');
+
+        $course = Course::where('id', $courseID)->first();
+
+        $lessons = Lesson::select('title', 'id')->where('course_id', $courseID)->get();
+
+        return view('courseGuts', compact('lessons', 'course'));
+    }
+
     public function lessonStore(){
 
         //first completely validate the users input
@@ -88,10 +115,47 @@ class InstructorController extends Controller
 
         if ($course->save()){
             $msg = 'Course has been saved!';
+        }else{
+            $msg = 'Course failed to be saved..';
         }
 
         return view('courseCreator', compact('msg', 'courses'));
 
+    }
+
+    public function editStore(){
+
+        //first completely validate the users input
+        $this->validate(request(), [
+
+            'username' => 'string|alpha_num|max:60',
+            'email' => 'email|string|max:60',
+
+        ]);
+
+        $username = request('username');
+
+        $email = request('email');
+
+        $msg = '';
+
+        $user = User::where('id', '=', auth()->user()->id)->first();
+
+        $user->username = $username;
+
+        $user->email = $email;
+
+        if ($user->save()){
+
+            $msg = 'Account has been updated properly!';
+
+        }else{
+
+            $msg = 'Error updating your account..';
+
+        }
+
+        return view('editInstructor', compact('msg'));
     }
 
 
