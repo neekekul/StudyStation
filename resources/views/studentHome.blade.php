@@ -27,39 +27,36 @@
     </div>
     <div class="container-fluid" id="vert">
         <div class="vertical-menu">
-            <a href="_home.php" target="hub">myCourses</a>
-            <a href="#" target="hub">myStudents</a>
-            <a href="lessonFactory.php" target="hub">lessonFactory</a>
-            <a href="#" target="hub">quizFactory</a>
-            <a href="#" target="hub">courseTimelines</a>
-            <a href="#" target="hub">studentReports</a>
-            <a href="#" target="hub">Luke is a Doober</a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-            <a href="#" target="hub"></a>
-
-
+           <ul class="nav nav-pills nav-stacked" role="tablist">
+               <li><a href="#">Lesson Creator</a></li>
+               <li><a href="#">Course Creator</a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+               <li><a href="#"></a></li>
+            </ul>
         </div>
     </div>
 @endsection
