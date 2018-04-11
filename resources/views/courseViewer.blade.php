@@ -33,12 +33,12 @@
                             </option>
                         @endforeach
   		            </select>
-                </div>
-                @endif
-                <div class="form-group">
-                <button type="submit" class="btn btn-primary"><strong>VIEW</strong></button>
-                </div>
-                @include('layouts.errors')
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary"><strong>VIEW</strong></button>
+                    </div>
+                    @endif
+                    @include('layouts.errors')
             </form>
         </div>
 
