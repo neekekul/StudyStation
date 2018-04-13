@@ -36,8 +36,8 @@
                                         @endforeach
                                     </ul>
                         </div>
-                    @endif
                     </div>
+                    @endif
                 <div class="form-group" id="one">
                     <label for="title">Name:</label>
                     <input type="text" class="form-control" id="title" name="name" maxlength="100" autocomplete="Off">

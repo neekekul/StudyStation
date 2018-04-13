@@ -28,8 +28,8 @@
     <div class="container-fluid" id="vert">
         <div class="vertical-menu">
            <ul class="nav nav-pills nav-stacked" role="tablist">
-               <li><a href="#">Lesson Creator</a></li>
-               <li><a href="#">Course Creator</a></li>
+               <li><a href="studentCourseView">View Courses</a></li>
+               <li><a href="#">View Linked Instructors</a></li>
                <li><a href="#"></a></li>
                <li><a href="#"></a></li>
                <li><a href="#"></a></li>
