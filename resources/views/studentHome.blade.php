@@ -12,7 +12,7 @@
             </ul>
         </div>
         <h1><strong>{{ auth()->user()->username }}</strong></h1>
-        <form method="post">
+        <form method="post" action="studentHome/search">
            {{ csrf_field() }}
             <div class="input-group">
                 <input id="email" type="text" class="form-control" name="search" placeholder="Search" autocomplete="Off" maxlength="300" list="students">

@@ -39,5 +39,6 @@ Route::get('/courseViewer/courseGuts', 'InstructorController@courseGuts');
 
 Route::post('/courseViewer/courseGuts/lessonViewer', 'InstructorController@lessonShow');
 
+Route::post('/studentHome/search','StudentController@instructorFind');
 
 Auth::routes();
