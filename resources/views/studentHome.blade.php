@@ -29,7 +29,7 @@
             </div>
         </form>
         <div class="dropdown" id="home">
-            <a href="/" target="_self">
+            <a href="studentInstructorView.blade.php" target="_self">
                 <button class="btn btn-link dropdown-toggle" type="button"><span class="glyphicon glyphicon-home"></span></button>
             </a>
         </div>
