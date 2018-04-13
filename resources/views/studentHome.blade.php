@@ -15,7 +15,16 @@
         <form method="post">
            {{ csrf_field() }}
             <div class="input-group">
-                <input id="email" type="text" class="form-control" name="search" placeholder="Search" autocomplete="On" maxlength="300">
+                <input id="email" type="text" class="form-control" name="search" placeholder="Search" autocomplete="Off" maxlength="300" list="students">
+                <datalist id="students"> 
+                @if(count($instructors))
+                @foreach($instructors as $instructor)
+                <option>
+                    {{$instructor->username}}
+                    </option>
+                @endforeach
+                    @endif
+                </datalist>
                 <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
             </div>
         </form>
