@@ -15,7 +15,7 @@
             </div>
             <h1><strong>Course Viewer</strong></h1>
             <div class="dropdown" id="home">
-                <a href="home" target="_self">
+                <a href="/home" target="_self">
                 <button class="btn btn-link dropdown-toggle" type="button"><span class="glyphicon glyphicon-home"></span></button>
             </a>
             </div>

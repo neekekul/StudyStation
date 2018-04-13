@@ -37,4 +37,7 @@ Route::post('/editInstructor', 'InstructorController@editStore');
 Route::get('/courseViewer', 'InstructorController@courseShow');
 Route::get('/courseViewer/courseGuts', 'InstructorController@courseGuts');
 
+Route::post('/courseViewer/courseGuts/lessonViewer', 'InstructorController@lessonShow');
+
+
 Auth::routes();
