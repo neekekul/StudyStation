@@ -16,7 +16,7 @@
            {{ csrf_field() }}
             <div class="input-group">
                 <input id="email" type="text" class="form-control" name="search" placeholder="Search" autocomplete="Off" maxlength="300" list="students">
-                <datalist id="students"> 
+                <datalist id="students">
                 @if(count($instructors))
                 @foreach($instructors as $instructor)
                 <option>
@@ -37,8 +37,8 @@
     <div class="container-fluid" id="vert">
         <div class="vertical-menu">
            <ul class="nav nav-pills nav-stacked" role="tablist">
-               <li><a href="#">Lesson Creator</a></li>
-               <li><a href="#">Course Creator</a></li>
+               <li><a href="studentCourseView">View Courses</a></li>
+               <li><a href="#">View Linked Instructors</a></li>
                <li><a href="#"></a></li>
                <li><a href="#"></a></li>
                <li><a href="#"></a></li>
