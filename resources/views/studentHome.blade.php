@@ -16,7 +16,7 @@
            {{ csrf_field() }}
             <div class="input-group">
                 <input id="email" type="text" class="form-control" name="search" placeholder="Search" autocomplete="Off" maxlength="300" list="students">
-                <datalist id="students"> 
+                <datalist id="students">
                 @if(count($instructors))
                 @foreach($instructors as $instructor)
                 <option>
