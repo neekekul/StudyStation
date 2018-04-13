@@ -23,21 +23,25 @@
             </div>
         </div>
         <div id="meat" class="container-fluid">
+            <form action="/courseViewer/courseGuts/lessonViewer" method="post">
+               {{ csrf_field() }}
                    @if(count($lessons))
-                    <div class="form-group" id="select" style="margin-top: 5vw;">
-                                <div class="alert alert-info">
-                                    <ul class="list-group">
-                                       <h2 class="list-group-header"><strong>"{{ $course->name }}" Lessons</strong></h2>
-                                        @foreach ($lessons as $lesson)
-                                            <a href="courseViewer/{{ $lesson->title }}"><li class="list-group-item">
-                                                {{ $lesson->title  }}
-                                                <span class="badge">{{ $lesson->id }}</span>
-                                            </li></a>
-                                        @endforeach
-                                    </ul>
-                        </div>
-                    @endif
+                    <div class="form-group" id="select">
+                    <label for="sel1">Select Lesson from "{{ $course->name }}": (select one)</label>
+                    <select class="form-control" id="sel1" name="lesson" required>
+    		            @foreach ($lessons as $lesson)
+                            <option value="{{ $lesson->id }}">
+                                {{ $lesson->title }}
+                            </option>
+                        @endforeach
+  		            </select>
                     </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary"><strong>VIEW</strong></button>
+                    </div>
+                    @endif
+                    @include('layouts.errors')
+            </form>
         </div>
 
 

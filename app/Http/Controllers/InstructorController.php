@@ -60,6 +60,22 @@ class InstructorController extends Controller
         return view('courseGuts', compact('lessons', 'course'));
     }
 
+    public function lessonShow(){
+
+        //first completely validate the users input
+        $this->validate(request(), [
+
+            'lesson' => 'required|integer',
+        ]);
+
+        $lessonID = request('lesson');
+
+        $lesson = Lesson::where('id', $lessonID)->first();
+
+        return view('lessonViewer', compact('lesson'));
+
+    }
+
     public function lessonStore(){
 
         //first completely validate the users input
