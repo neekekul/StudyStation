@@ -15,4 +15,7 @@ class StudentCourseViewerController extends Controller
     $courses = Course::select('name', 'instructor_id','username')-> join('users', 'courses.instructor_id', '=', 'users.id') ->where('instructor_id','>','-1') -> get();
     return view('studentCourseViewer',compact('courses'));
   }
+    public function instructorFind(){
+        return view('studentInstructorView');
+    }
 }

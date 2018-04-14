@@ -40,5 +40,6 @@ Route::get('/studentCourseView','StudentCourseViewerController@getCourses');
 
 Route::post('/courseViewer/courseGuts/lessonViewer', 'InstructorController@lessonShow');
 
+Route::post('/studentHome/search','StudentCourseViewerController@instructorFind');
 
 Auth::routes();
