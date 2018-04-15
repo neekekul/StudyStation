@@ -25,12 +25,13 @@ class HomeController extends Controller
      */
     public function show()
     {
-
+        $instructors= User::where('type','instructor')->get();
+        
         if (auth()->user()->type == 'instructor'){
             return view('instructorHome');
         }
         else{
-            return view('studentHome');
+            return view('studentHome', compact('instructors'));
         }
     }
 }
