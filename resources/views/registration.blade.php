@@ -53,7 +53,7 @@
                 <h3>Already have an account? Click the button below to sign in!</h3>
             </div>
 
-            <form action="/instructorLogin" method="GET" style="margin:0 auto; width:75%; margin-top:3vw;">
+            <form action="/Login" method="GET" style="margin:0 auto; width:75%; margin-top:3vw;">
                 <div class="form-group">
                     <button class="btn btn-default btn-lg btn-block">LOGIN</button>
                 </div>

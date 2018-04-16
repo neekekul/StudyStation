@@ -22,7 +22,7 @@ class LoginController extends Controller
     protected function onInstructorCreate(){
         //create the instructor login view
         //display it route it, whatever you wanna call it
-        return view('instructorLogin');
+        return view('Login');
     }
 
     public function instructorSession(){

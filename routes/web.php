@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/instructorLogin', 'LoginController@onInstructorCreate');
-Route::post('/instructorLogin','LoginController@instructorSession');
+Route::get('/Login', 'LoginController@onInstructorCreate');
+Route::post('/Login','LoginController@instructorSession');
 
 Route::get('/registration', 'RegisterController@create');
 Route::post('/registration', 'RegisterController@store');
