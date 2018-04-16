@@ -122,7 +122,7 @@
     width: 18vw;
     float: right;
     margin-top: -3.9vw;
-    margin-right: 20vw;
+    margin-right: 24vw;
 }
 
 .container-fluid form .input-group{
@@ -131,7 +131,7 @@
 
 .container-fluid form .input-group button{
     margin-top: 0vw;
-    margin-right: -3.4vw;
+    margin-right: -4vw;
     float: right;
 }
 
