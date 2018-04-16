@@ -85,7 +85,7 @@
 }
 
 .container-fluid .dropdown .btn{
-    margin-left: -1.09vw;
+    margin-left: -1.5vw;
     height: 5vw;
     width: 5vw;
     background-color: #2a2a2a;
@@ -100,7 +100,7 @@
     width: 5vw;
     height: 5vw;
     margin-top: -5.09vw;
-    margin-right: -2.18vw;
+    margin-right: -2.8vw;
 }
 
 .container-fluid #home .btn{
@@ -119,19 +119,19 @@
 }
 
 .container-fluid form{
-    width: 20vw;
+    width: 18vw;
     float: right;
     margin-top: -3.9vw;
-    margin-right: 11vw;
+    margin-right: 20vw;
 }
 
 .container-fluid form .input-group{
-    width: 20vw;
+    width: 18vw;
 }
 
 .container-fluid form .input-group button{
     margin-top: 0vw;
-    margin-right: -3vw;
+    margin-right: -3.4vw;
     float: right;
 }
 
@@ -141,7 +141,7 @@
     float: left;
     width: 11vw;
     height: 52.029vw;
-    margin-left: -1.1vw;
+    margin-left: -1.6vw;
     margin-top: 0vw;
     overflow-y: auto;
 }

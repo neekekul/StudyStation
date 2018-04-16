@@ -26,5 +26,6 @@
     @yield('content')
 
 
+
 </body>
 </html>
