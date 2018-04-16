@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Course;
 
-class StudentCourseViewerController extends Controller
+class StudentController extends Controller
 {
   protected function onStudentViewCourseCreate(){
       return view('studentCourseViewer');
