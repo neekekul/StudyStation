@@ -1,5 +1,5 @@
 #okay{
-    background-color: #FFFFFF;
+    background-color: #eeeeee;
     max-width: 100%;
     overflow-x: hidden;
     font-family: clone-rounded-latin, sans-serif;
@@ -77,6 +77,14 @@
     margin-left: 11vw;
     width: 100%;
     height: 100%;
+}
+
+#vert #feed{
+    background-color: #eeeeee;
+    text-align: center;
+    width: 90.9%;
+    height: 100%;
+    margin-left: 10vw;
 }
 
 .container-fluid .dropdoown{

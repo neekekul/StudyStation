@@ -49,7 +49,7 @@
 
             </form>
 
-            <div class="container-fluid" style="margin-top:3vw">
+            <div class="container-fluid" style="margin-top:10vw">
                 <h3>Already have an account? Click the button below to sign in!</h3>
             </div>
 

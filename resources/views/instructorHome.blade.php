@@ -6,9 +6,9 @@
             <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
             <ul class="dropdown-menu">
                 <li><a href="#">Help</a></li>
-                <li><a href="editInstructor">Edit Account</a></li>
+                <li><a href="/editInstructor">Edit Account</a></li>
                 <li class="divider"></li>
-                <li><a href="logout">Logout</a></li>
+                <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
         <h1><strong>{{ auth()->user()->username }}</strong></h1>
@@ -20,7 +20,7 @@
             </div>
         </form>
         <div class="dropdown" id="home">
-            <a href="home" target="_self">
+            <a href="/home" target="_self">
                 <button class="btn btn-link dropdown-toggle" type="button"><span class="glyphicon glyphicon-home"></span></button>
             </a>
         </div>
@@ -28,9 +28,9 @@
     <div class="container-fluid" id="vert">
         <div class="vertical-menu">
            <ul class="nav nav-pills nav-stacked" role="tablist">
-               <li><a href="lessonCreator">Lesson Creator</a></li>
-               <li><a href="courseCreator">Course Creator</a></li>
-               <li><a href="courseViewer">Course Viewer</a></li>
+               <li><a href="/lessonCreator">Lesson Creator</a></li>
+               <li><a href="/courseCreator">Course Creator</a></li>
+               <li><a href="/courseViewer">Course Viewer</a></li>
                <li><a href="#"></a></li>
                <li><a href="#"></a></li>
                <li><a href="#"></a></li>
@@ -57,6 +57,9 @@
                <li><a href="#"></a></li>
                <li><a href="#"></a></li>
             </ul>
+        </div>
+        <div class="container-fluid" id="feed">
+            @include('layouts.message')
         </div>
     </div>
 @endsection

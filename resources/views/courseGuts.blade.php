@@ -10,9 +10,9 @@
                 <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="#">Help</a></li>
-                    <li><a href="editInstructor">Edit Account</a></li>
+                    <li><a href="/editInstructor">Edit Account</a></li>
                     <li class="divider"></li>
-                    <li><a href="logout">Logout</a></li>
+                    <li><a href="/logout">Logout</a></li>
                 </ul>
             </div>
             <h1><strong>Course Lessons</strong></h1>

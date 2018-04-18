@@ -11,7 +11,7 @@
                     <li><a href="#">Help</a></li>
                     <li><a href="/editInstructor">Edit Account</a></li>
                     <li class="divider"></li>
-                    <li><a href="logout">Logout</a></li>
+                    <li><a href="/logout">Logout</a></li>
                 </ul>
             </div>
             <h1><strong>Lesson Viewer</strong></h1>
@@ -22,15 +22,12 @@
             </div>
         </div>
         <div id="meat" class="container-fluid">
-           <br>
-           <br>
-            {{ $lesson->title }}
+           <h2>{{ $course->name }} Lesson Data:</h2>
+            <h3>Title: <small>{{ $lesson->title }}</small></h3>
             <br>
+            <h3 style="word-wrap: break-word;">Body: <small>{{ $lesson->body }}</small></h3>
             <br>
-            {{ $lesson->body }}
-            <br>
-            <br>
-            {{ $lesson->summary }}
+            <h3>Summary: <small>{{ $lesson->summary }}</small></h3>
         </div>
 
 

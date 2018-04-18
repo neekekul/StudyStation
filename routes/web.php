@@ -32,7 +32,8 @@ Route::get('/courseCreator', 'InstructorController@courseCreate');
 Route::post('/courseCreator', 'InstructorController@courseStore');
 
 Route::get('/editInstructor', 'InstructorController@editCreate');
-Route::post('/editInstructor', 'InstructorController@editStore');
+Route::post('/editInstructor/email', 'InstructorController@editEmailStore');
+Route::post('/editInstructor/username', 'InstructorController@editUsernameStore');
 
 Route::get('/courseViewer', 'InstructorController@courseShow');
 Route::get('/courseViewer/courseGuts', 'InstructorController@courseGuts');

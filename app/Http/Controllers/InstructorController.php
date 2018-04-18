@@ -72,7 +72,11 @@ class InstructorController extends Controller
 
         $lesson = Lesson::where('id', $lessonID)->first();
 
-        return view('lessonViewer', compact('lesson'));
+        $courseID = $lesson->course_id;
+
+        $course = Course::where('id', $courseID)->first();
+
+        return view('lessonViewer', compact('lesson', 'course'));
 
     }
 
@@ -86,8 +90,6 @@ class InstructorController extends Controller
             'body' => 'required|string|max:13000',
             'note' => 'string|max:700',
         ]);
-
-        $courses = Course::select('name', 'id')->where('instructor_id', '=', auth()->user()->id)->get();
 
         //pull the fields into php variables
         $courseID = request('course');
@@ -107,7 +109,7 @@ class InstructorController extends Controller
             $msg = 'Lesson has failed to be saved correctly.';
         }
 
-        return view('lessonCreator', compact('msg', 'courses'));
+        return view('instructorHome', compact('msg'));
 
     }
 
@@ -118,8 +120,6 @@ class InstructorController extends Controller
 
             'name' => 'required|string|alpha_num|max:100',
         ]);
-
-        $courses = Course::select('name')->where('instructor_id', '=', auth()->user()->id)->get();
 
         //pull the fields into php variables
         $name = request('name');
@@ -135,29 +135,24 @@ class InstructorController extends Controller
             $msg = 'Course failed to be saved..';
         }
 
-        return view('courseCreator', compact('msg', 'courses'));
+        return view('instructorHome', compact('msg'));
 
     }
 
-    public function editStore(){
+    public function editEmailStore(){
 
         //first completely validate the users input
         $this->validate(request(), [
 
-            'username' => 'string|alpha_num|max:60',
             'email' => 'email|string|max:60',
 
         ]);
-
-        $username = request('username');
 
         $email = request('email');
 
         $msg = '';
 
         $user = User::where('id', '=', auth()->user()->id)->first();
-
-        $user->username = $username;
 
         $user->email = $email;
 
@@ -171,7 +166,37 @@ class InstructorController extends Controller
 
         }
 
-        return view('editInstructor', compact('msg'));
+        return view('instructorHome', compact('msg'));
+    }
+
+    public function editUsernameStore(){
+
+        //first completely validate the users input
+        $this->validate(request(), [
+
+            'username' => 'string|alpha_num|max:60',
+
+        ]);
+
+        $username = request('username');
+
+        $msg = '';
+
+        $user = User::where('id', '=', auth()->user()->id)->first();
+
+        $user->username = $username;
+
+        if ($user->save()){
+
+            $msg = 'Account has been updated properly!';
+
+        }else{
+
+            $msg = 'Error updating your account..';
+
+        }
+
+        return view('instructorHome', compact('msg'));
     }
 
 
