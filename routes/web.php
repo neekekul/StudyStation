@@ -15,8 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/instructorLogin', 'LoginController@onInstructorCreate');
-Route::post('/instructorLogin','LoginController@instructorSession');
+Route::get('/Login', 'LoginController@onInstructorCreate');
+Route::post('/Login','LoginController@instructorSession');
 
 Route::get('/registration', 'RegisterController@create');
 Route::post('/registration', 'RegisterController@store');
@@ -36,12 +36,12 @@ Route::post('/editInstructor', 'InstructorController@editStore');
 
 Route::get('/courseViewer', 'InstructorController@courseShow');
 Route::get('/courseViewer/courseGuts', 'InstructorController@courseGuts');
-Route::get('/studentCourseView','StudentCourseViewerController@getCourses');
+Route::get('/studentCourseView','StudentController@getCourses');
 
 Route::post('/courseViewer/courseGuts/lessonViewer', 'InstructorController@lessonShow');
 
-Route::post('/studentHome/search','StudentCourseViewerController@instructorFind');
-Route::get('/studentInstructorView','StudentCourseViewerController@onStudentViewCourseCreate');
+Route::post('/studentHome/search','StudentController@instructorFind');
+Route::get('/studentInstructorView','StudentController@onStudentViewCourseCreate');
 
 
 

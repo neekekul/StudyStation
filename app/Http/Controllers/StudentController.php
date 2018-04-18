@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Course;
 use App\User;
 
-class StudentCourseViewerController extends Controller
+class StudentController extends Controller
 {
   protected function onStudentViewCourseCreate(){
       return view('studentCourseViewer');

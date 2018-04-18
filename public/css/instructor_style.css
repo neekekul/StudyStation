@@ -119,14 +119,14 @@
 }
 
 .container-fluid form{
-    width: 18vw;
+    width: 15vw;
     float: right;
     margin-top: -3.9vw;
     margin-right: 24vw;
 }
 
 .container-fluid form .input-group{
-    width: 18vw;
+    width: 15vw;
 }
 
 .container-fluid form .input-group button{

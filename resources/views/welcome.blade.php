@@ -8,7 +8,7 @@
     </div>
 <div id="head">
   <br><br>
-    <form method="get" action="instructorLogin" style="margin:0 auto; width:75%; height:7vw;">
+    <form method="get" action="Login" style="margin:0 auto; width:75%; height:7vw;">
             <button type="submit" class="btn btn-primary btn-lg btn-block" style="height:4vw;">LOGIN</button>
         </form>
     <form method="get" action="registration" style="margin:0 auto; width:75%; height:7vw;">
