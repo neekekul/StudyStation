@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Course;
+use App\User;
 
 class StudentController extends Controller
 {
@@ -16,6 +17,20 @@ class StudentController extends Controller
     return view('studentCourseViewer',compact('courses'));
   }
     public function instructorFind(){
-        return view('studentInstructorView');
+        //first completely validate the users input
+        $this->validate(request(), [
+
+            'search' => 'required|integer',
+        ]);
+        
+        $instructorID = request('search');
+        
+        $instructors= User::where('type','instructor')->get();
+        
+        $ins = User::where('id', $instructorID)->first();
+        
+        $courses = Course::where('instructor_id', $instructorID)->get();
+        
+        return view('studentInstructorView', compact('instructors', 'ins', 'courses'));
     }
 }
