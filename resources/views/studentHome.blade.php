@@ -19,7 +19,7 @@
                 <datalist id="students">
                 @if(count($instructors))
                 @foreach($instructors as $instructor)
-                <option>
+                <option value="{{ $instructor->id }}">
                     {{$instructor->username}}
                     </option>
                 @endforeach
