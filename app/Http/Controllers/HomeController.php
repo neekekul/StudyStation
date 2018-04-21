@@ -34,7 +34,7 @@ class HomeController extends Controller
             return view('instructorHome', compact('lessons'));
         }
         else{
-            return view('studentHome', compact('instructors'));
+            return view('studentHome', compact('instructors', 'lessons'));
         }
     }
 }

@@ -40,32 +40,30 @@
                <li><a href="studentCourseView">View Courses</a></li>
                <li><a href="#">View Linked Instructors</a></li>
                <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
+
             </ul>
+        </div>
+        <div class="container-fluid" id="feed">
+            @include('layouts.message')
+            <div class="blog-header">
+                <h2 class="blog-title">Current Registration Data:</h2>
+                <p class="lead blog-description">The official example of a blog feed</p>
+                <br>
+            </div>
+            @if(count($lessons))
+               @foreach($lessons as $lesson)
+                    <div class="blog-post" style="width: 50vw;">
+                        <h3 class="blog-post-title">{{ $lesson->title }}</h4>
+                        <p class="blog-post-meta">{{ $lesson->created_at->toFormattedDateString() }} </p>
+                        <h4>Body:</h4>
+                        <p>{{ $lesson->body }}</p>
+                        <h4>Summary:</h4>
+                        <p>{{ $lesson->summary }}</p>
+                        <br>
+                        <hr>
+                    </div>
+                @endforeach
+            @endif
         </div>
     </div>
 @endsection
