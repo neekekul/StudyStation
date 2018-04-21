@@ -2,7 +2,7 @@
 
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" id="main">
             <div class="dropdown">
                 <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
                 <ul class="dropdown-menu">
@@ -18,6 +18,7 @@
             </a>
             </div>
         </div>
+        <div id="meat" class="container-fluid">
         <div class="container-fluid" id="ereg">
            <h2>Current Registration Data:</h2>
             <h4>Type: <small>{{ auth()->user()->type }}</small></h4>
@@ -26,7 +27,6 @@
             <br>
             <h4>Email: <small>{{ auth()->user()->email }}</small></h4>
         </div>
-        <div id="meat" class="container-fluid">
             <form action="/editInstructor/email" method="post">
                {{ csrf_field() }}
                @include('layouts.message')

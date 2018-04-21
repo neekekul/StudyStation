@@ -1,7 +1,7 @@
 @extends('layouts.inslayout')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" id="main">
         <div class="dropdown">
             <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></button>
             <ul class="dropdown-menu">

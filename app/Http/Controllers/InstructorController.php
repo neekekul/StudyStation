@@ -13,16 +13,19 @@ use App\Http\Controllers\Controller;
 class InstructorController extends Controller
 {
 
-    //
+    //all functions must be authenticated in this controller by the 'auth' middleware. Except logout of course.
     public function __construct()
     {
         $this->middleware('auth')->except('destroy');
     }
 
+    //method to pull up the lesson creator function.
     public function lessonCreate(){
 
+        //This ORM query gets all the courses that are owned by the specificly authenticated instructor/user.
         $courses = Course::select('name', 'id')->where('instructor_id', '=', auth()->user()->id)->get();
 
+        //return the lesson creator view, and pass all of those courses to the view itself for display/use.
         return view('lessonCreator', compact('courses'));
     }
 
@@ -158,7 +161,7 @@ class InstructorController extends Controller
 
         if ($user->save()){
 
-            $msg = 'Account has been updated properly!';
+            $msg = 'Account has been updated properly! Please press home.';
 
         }else{
 
@@ -188,7 +191,7 @@ class InstructorController extends Controller
 
         if ($user->save()){
 
-            $msg = 'Account has been updated properly!';
+            $msg = 'Account has been updated properly! Please press home.';
 
         }else{
 

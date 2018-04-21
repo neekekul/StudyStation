@@ -1,5 +1,5 @@
 #okay{
-    background-color: #eeeeee;
+    background-color: #f2f2f2;
     max-width: 100%;
     overflow-x: hidden;
     font-family: clone-rounded-latin, sans-serif;
@@ -7,19 +7,20 @@
     font-weight: 600;
 }
 
-.container-fluid{
-    background-color: #3a464b;
+#main{
+    background-color: #2f556b;
     height: 5vw;
 }
 
 #okay #ereg{
-    background-color: #eeeeee;
+    background-color: #f2f2f2;
     margin-top: 0vw;
 }
 
 #meat{
-    background-color: #eeeeee;
-    height: 61vw;
+    background-color: #f2f2f2;
+    height: 54vw;
+    overflow-y: auto;
 }
 
 #meat form{
@@ -28,6 +29,7 @@
 }
 
 #meat form button{
+    background-color: #2f556b;
     width: 100%;
     height: 4vw;
 }
@@ -38,7 +40,7 @@
 }
 
 #meat form #select{
-    margin-top: 5vw;
+    margin-top: 0vw;
 }
 
 #meat form #one{
@@ -46,7 +48,7 @@
 }
 
 #meat form #ename{
-    margin-top: 20vw;
+    margin-top: 10vw;
 }
 
 #meat form #two #body{
@@ -57,7 +59,7 @@
     height: 10vw;
 }
 
-.container-fluid h1{
+#main h1{
     margin-left: 29%;
     margin-top: -3.94vw;
     width: 40vw;
@@ -67,7 +69,7 @@
 }
 
 #vert{
-    background-color: #eeeeee;
+    background-color: #f2f2f2;
     height: 54vw;
     width: 100%;
     margin-top: .009vw;
@@ -80,30 +82,35 @@
 }
 
 #vert #feed{
-    background-color: #eeeeee;
-    text-align: center;
-    width: 90.9%;
-    height: 100%;
-    margin-left: 10vw;
+    background-color: #eaedf1;
+    text-align: left;
+    width: 87vw;
+    height: 52.029vw;
+    margin: 0;
+    margin-left: 10.7vw;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    word-wrap: break-word;
+    border-radius: 5px;
 }
 
-.container-fluid .dropdoown{
+#main .dropdoown{
     float: left;
     background-color: aqua;
 }
 
-.container-fluid .dropdown .btn{
+#main .dropdown .btn{
     margin-left: -1.5vw;
     height: 5vw;
     width: 5vw;
     background-color: #2a2a2a;
 }
 
-.container-fluid .dropdown .btn span{
+#main .dropdown .btn span{
     color: #8bc34a;
 }
 
-.container-fluid #home{
+#main #home{
     float: right;
     width: 5vw;
     height: 5vw;
@@ -111,62 +118,200 @@
     margin-right: -2.8vw;
 }
 
-.container-fluid #home .btn{
+#main #home .btn{
     margin-right: 0vw;
     height: 5vw;
     width: 5vw;
     background-color: #2a2a2a;
 }
 
-.container-fluid #home a{
+#main #home a{
     margin-right: 0vw;
 }
 
-.container-fluid #home a button span{
+#main #home a button span{
     color: #8bc34a;
 }
 
-.container-fluid form{
-    width: 15vw;
+#main form{
+    width: 20vw;
     float: right;
     margin-top: -3.9vw;
-    margin-right: 24vw;
+    margin-right: 15vw;
 }
 
-.container-fluid form .input-group{
-    width: 15vw;
+#main form .input-group{
+    width: 20vw;
 }
 
-.container-fluid form .input-group button{
+#main form .input-group button{
     margin-top: 0vw;
-    margin-right: -4vw;
+    margin-right: -3vw;
     float: right;
 }
 
-.vertical-menu {
-    background-color: #4b3a46;
-    box-shadow: 2px 2px 10px 2px rgba(0,0,0,.30), 2px 2px 10px 2px rgba(0,0,0,.30);
+#vert .vertical-menu {
+    background-color: #d2c9bc;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
     float: left;
     width: 11vw;
     height: 52.029vw;
     margin-left: -1.6vw;
     margin-top: 0vw;
+    border-radius: 5px;
     overflow-y: auto;
 }
 
-.vertical-menu a {
-    background-color: #4b3a46;
-    color: white;
+#vert .vertical-menu ul li a {
+    color: 	#452f6b;
     display: block;
+    border: 1px solid #452f6b;
     padding: 12px;
     text-decoration: none;
 }
 
-.vertical-menu a:hover {
-    background-color: #cccccc;
+#vert .vertical-menu ul li a:hover {
+    background-color: #452f6b;
+    color: white;
+    border: 1px solid white;
+
 }
 
 .vertical-menu a.active {
     background-color: #4CAF50;
     color: white;
+}
+
+@media screen and (max-width: 1000px){
+    /*
+    #3a464b
+    */
+    #main{
+        background-color: #2f556b;
+        height: 5.8vw;
+    }
+    #main h1{
+        margin-left: 29%;
+        margin-top: -3.94vw;
+        width: 40vw;
+        text-align: center;
+        color: white;
+        font-size: 3vw;
+    }
+    #main .dropdoown{
+        float: left;
+    }
+
+    #main .dropdown .btn{
+        margin-left: -1.9vw;
+        height: 5.8vw;
+        width: 5.8vw;
+        background-color: #2a2a2a;
+    }
+
+    #main .dropdown .btn span{
+        color: #8bc34a;
+    }
+
+    #main #home{
+        float: right;
+        width: 5.8vw;
+        height: 5.8vw;
+        margin-top: -6.35vw;
+        margin-right: -3.6vw;
+    }
+
+    #main #home .btn{
+        margin-right: 0vw;
+        height: 5.8vw;
+        width: 5.8vw;
+        background-color: #2a2a2a;
+    }
+
+    #main #home a{
+        margin-right: 0vw;
+    }
+
+    #main #home a button span{
+        color: #8bc34a;
+    }
+    #main form{
+        width: 17vw;
+        float: right;
+        margin-top: -5.1vw;
+        margin-right: 18vw;
+    }
+
+    #main form .input-group{
+        width: 17vw;
+    }
+
+    #main form .input-group #search{
+        height: 3.5vw;
+    }
+
+    #main form .input-group button{
+        margin-top: 0vw;
+        height: 3.5vw;
+        margin-right: -5.1vw;
+        float: right;
+    }
+
+    #vert{
+        background-color: #f2f2f2;
+        height: 85vw;
+        width: 100%;
+        margin-top: .009vw;
+        padding: 0;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+
+    #vert .container{
+        margin-left: 11vw;
+        width: 100%;
+        height: 100%;
+    }
+
+    #vert #feed{
+        background-color: #eaedf1;
+        text-align: center;
+        width: 79vw;
+        height: 82.029vw;
+        margin: 0;
+        margin-left: 20vw;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+        overflow-y: auto;
+        border-radius: 5px;
+    }
+    #vert .vertical-menu {
+        background-color: #d2c9bc;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+        float: left;
+        width: 18.5vw;
+        height: 82.029vw;
+        margin-left: 0vw;
+        margin-top: 0vw;
+        overflow-y: auto;
+    }
+
+    #vert .vertical-menu ul li a {
+        color: #452f6b;
+        display: block;
+        border: .3px solid #452f6b;
+        padding: 12px;
+        text-decoration: none;
+    }
+
+    #vert .vertical-menu ul li a:hover {
+        background-color: #452f6b;
+        color: white;
+        border: 1px solid white;
+    }
+
+    .vertical-menu a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
 }

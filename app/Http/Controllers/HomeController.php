@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\User;
+use App\Course;
+use App\Lesson;
 
 class HomeController extends Controller
 {
@@ -26,9 +28,10 @@ class HomeController extends Controller
     public function show()
     {
         $instructors= User::where('type','instructor')->get();
+        $lessons = Lesson::latest()->get();
         
         if (auth()->user()->type == 'instructor'){
-            return view('instructorHome');
+            return view('instructorHome', compact('lessons'));
         }
         else{
             return view('studentHome', compact('instructors'));
