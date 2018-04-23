@@ -43,6 +43,8 @@ Route::post('/courseViewer/courseGuts/lessonViewer', 'InstructorController@lesso
 
 Route::post('/studentHome/search','StudentController@instructorFind');
 Route::get('/studentInstructorView','StudentController@onStudentViewCourseCreate');
+Route::get('/linktest','StudentController@makeLink');
+
 
 
 

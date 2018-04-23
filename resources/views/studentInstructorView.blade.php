@@ -29,7 +29,7 @@
             </div>
         </form>
         <div class="dropdown" id="home">
-            <a href="/studentInstructorView" target="_self">
+            <a href="/home" target="_self">
                 <button class="btn btn-link dropdown-toggle" type="button"><span class="glyphicon glyphicon-home"></span></button>
             </a>
         </div>
@@ -89,10 +89,10 @@
                     @endif
                     @include('layouts.errors')
             </form>
-            <form action="/courseViewer/courseGuts" method="get" style="margin-top: 0vw;">
+            <form action="/linktest" method="get" style="margin-top: 0vw;">
                {{ csrf_field() }}
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary"><strong>Link to {{ $ins->username }}</strong></button>
+                        <button type="submit" name="insID" class="btn btn-primary" value="{{$ins->id}}"><strong>Link to {{ $ins->username }}</strong></button>
                     </div>
                     @include('layouts.errors')
             </form>
