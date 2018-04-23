@@ -29,7 +29,7 @@
             </div>
         </form>
         <div class="dropdown" id="home">
-            <a href="studentInstructorView.blade.php" target="_self">
+            <a href="/home" target="_self">
                 <button class="btn btn-link dropdown-toggle" type="button"><span class="glyphicon glyphicon-home"></span></button>
             </a>
         </div>
@@ -43,6 +43,7 @@
 
             </ul>
         </div>
+      <h3 style="text-align:center;">@include('layouts.message')</h3>
         <div class="container-fluid" id="feed">
             @include('layouts.message')
             <div class="blog-header">
