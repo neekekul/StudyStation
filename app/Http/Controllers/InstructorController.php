@@ -93,6 +93,7 @@ class InstructorController extends Controller
             'body' => 'required|string|max:13000',
             'note' => 'string|max:700',
         ]);
+        $lessons = Lesson::latest()->get();
 
         //pull the fields into php variables
         $courseID = request('course');
@@ -112,7 +113,7 @@ class InstructorController extends Controller
             $msg = 'Lesson has failed to be saved correctly.';
         }
 
-        return view('instructorHome', compact('msg'));
+        return view('instructorHome', compact('msg', 'lessons'));
 
     }
 
@@ -123,6 +124,7 @@ class InstructorController extends Controller
 
             'name' => 'required|string|alpha_num|max:100',
         ]);
+        $lessons = Lesson::latest()->get();
 
         //pull the fields into php variables
         $name = request('name');
@@ -138,7 +140,7 @@ class InstructorController extends Controller
             $msg = 'Course failed to be saved..';
         }
 
-        return view('instructorHome', compact('msg'));
+        return view('instructorHome', compact('msg', 'lessons'));
 
     }
 
@@ -150,6 +152,7 @@ class InstructorController extends Controller
             'email' => 'email|string|max:60',
 
         ]);
+        $lessons = Lesson::latest()->get();
 
         $email = request('email');
 
@@ -169,7 +172,7 @@ class InstructorController extends Controller
 
         }
 
-        return view('instructorHome', compact('msg'));
+        return view('instructorHome', compact('msg', 'lessons'));
     }
 
     public function editUsernameStore(){
@@ -180,6 +183,7 @@ class InstructorController extends Controller
             'username' => 'string|alpha_num|max:60',
 
         ]);
+        $lessons = Lesson::latest()->get();
 
         $username = request('username');
 
@@ -199,7 +203,7 @@ class InstructorController extends Controller
 
         }
 
-        return view('instructorHome', compact('msg'));
+        return view('instructorHome', compact('msg', 'lessons'));
     }
 
 
