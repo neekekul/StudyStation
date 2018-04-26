@@ -6,7 +6,10 @@
             <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
             <ul class="dropdown-menu">
                 <li><a href="#">Help</a></li>
-                <li><a href="/editInstructor">Edit Account</a></li>
+                <li>
+                    <a href="/editInstructor">Edit Account <img src="/uploads/icons/{{ auth()->user()->icon }}" style="width:20px; height:20px; float:right; border-radius: 50%;"></a>
+
+                </li>
                 <li class="divider"></li>
                 <li><a href="/logout">Logout</a></li>
             </ul>
@@ -15,7 +18,16 @@
         <form method="post">
            {{ csrf_field() }}
             <div class="input-group">
-                <input id="search" type="text" class="form-control" name="search" placeholder="Search" autocomplete="On" maxlength="300">
+                <input id="email" type="text" class="form-control" name="search" placeholder="Search" autocomplete="Off" maxlength="300" list="students">
+                <datalist id="students">
+                @if(count($instructors))
+                @foreach($instructors as $instructor)
+                <option value="{{ $instructor->id }}">
+                    {{$instructor->username}}
+                    </option>
+                @endforeach
+                    @endif
+                </datalist>
                 <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
             </div>
         </form>

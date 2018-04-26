@@ -32,6 +32,7 @@ Route::get('/courseCreator', 'InstructorController@courseCreate');
 Route::post('/courseCreator', 'InstructorController@courseStore');
 
 Route::get('/editInstructor', 'InstructorController@editCreate');
+Route::post('/editInstructor', 'InstructorController@iconStore');
 Route::post('/editInstructor/email', 'InstructorController@editEmailStore');
 Route::post('/editInstructor/username', 'InstructorController@editUsernameStore');
 
@@ -39,7 +40,8 @@ Route::get('/courseViewer', 'InstructorController@courseShow');
 Route::get('/courseViewer/courseGuts', 'InstructorController@courseGuts');
 Route::get('/studentCourseView','StudentController@getCourses');
 
-Route::post('/courseViewer/courseGuts/lessonViewer', 'InstructorController@lessonShow');
+Route::get('/courseViewer/courseGuts/lessonViewer', 'InstructorController@lessonShow');
+Route::post('/courseViewer/courseGuts/lessonViewer', 'InstructorController@commentStore');
 
 Route::post('/studentHome/search','StudentController@instructorFind');
 Route::get('/studentInstructorView','StudentController@onStudentViewCourseCreate');

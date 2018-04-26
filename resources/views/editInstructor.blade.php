@@ -20,7 +20,13 @@
         </div>
         <div id="meat" class="container-fluid">
         <div class="container-fluid" id="ereg">
-           <h2>Current Registration Data:</h2>
+          <img src="/uploads/icons/{{ auth()->user()->icon }}" style="width:100px; height:100px; float:right; border-radius: 50%; margin-right: 10vw; margin-top:1vw;">
+          <form method="post" enctype="multipart/form-data" style="float:right; width: 3vw; margin-top: 10vw;">
+             {{ csrf_field() }}
+              <input type="file" name="icon">
+              <input type="submit">
+          </form>
+           <h2>{{ auth()->user()->username }}'s Registration Data:</h2>
             <h4>Type: <small>{{ auth()->user()->type }}</small></h4>
             <br>
             <h4>Username: <small>{{ auth()->user()->username }}</small></h4>

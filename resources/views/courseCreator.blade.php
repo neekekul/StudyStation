@@ -23,12 +23,12 @@
             <form action="/courseCreator" method="post">
                {{ csrf_field() }}
                @include('layouts.message')
-                   @if(count($courses))
+                   @if(count($user->courses))
                     <div class="form-group" id="select">
                                 <div class="alert alert-info">
                                     <ul class="list-group">
                                        <h2 class="list-group-header" style="text-align: center;"><strong>{{ auth()->user()->username }}s Courses</strong></h2>
-                                        @foreach ($courses as $course)
+                                        @foreach ($user->courses as $course)
                                             <li class="list-group-item" style="background-color: #899372; color: white;">
                                                 {{ $course->name  }}
                                                 <span class="badge">{{ $course->id }}</span>

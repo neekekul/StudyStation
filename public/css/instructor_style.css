@@ -94,6 +94,16 @@
     border-radius: 5px;
 }
 
+#vert #commentfeed{
+    background-color: #eaedf1;
+    text-align: left;
+    width: 60%;
+    height: 100%;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    word-wrap: break-word;
+}
+
 #main .dropdoown{
     float: left;
     background-color: aqua;
@@ -180,6 +190,182 @@
 .vertical-menu a.active {
     background-color: #4CAF50;
     color: white;
+}
+
+@media screen and (max-width: 1200px){
+    /*
+    #3a464b
+    */
+    #main{
+        background-color: #2f556b;
+        height: 5.8vw;
+    }
+    #main h1{
+        margin-left: 29%;
+        margin-top: -3.94vw;
+        width: 40vw;
+        text-align: center;
+        color: white;
+        font-size: 3vw;
+    }
+    #main .dropdoown{
+        float: left;
+    }
+
+    #main .dropdown .btn{
+        margin-left: -1.9vw;
+        height: 5.8vw;
+        width: 5.8vw;
+        background-color: #2a2a2a;
+    }
+
+    #main .dropdown .btn span{
+        color: #8bc34a;
+    }
+
+    #main #home{
+        float: right;
+        width: 5.8vw;
+        height: 5.8vw;
+        margin-top: -6.35vw;
+        margin-right: -3.6vw;
+    }
+
+    #main #home .btn{
+        margin-right: 0vw;
+        height: 5.8vw;
+        width: 5.8vw;
+        background-color: #2a2a2a;
+    }
+
+    #main #home a{
+        margin-right: 0vw;
+    }
+
+    #main #home a button span{
+        color: #8bc34a;
+    }
+    #main form{
+        width: 17vw;
+        float: right;
+        margin-top: -5.1vw;
+        margin-right: 18vw;
+    }
+
+    #main form .input-group{
+        width: 17vw;
+    }
+
+    #main form .input-group #search{
+        height: 3.5vw;
+    }
+
+    #main form .input-group button{
+        margin-top: 0vw;
+        height: 3.5vw;
+        margin-right: -5.1vw;
+        float: right;
+    }
+
+    #vert{
+        background-color: #f2f2f2;
+        height: 85vw;
+        width: 100%;
+        margin-top: .009vw;
+        padding: 0;
+        overflow-x: auto;
+        overflow-y: auto;
+    }
+
+    #vert .container{
+        margin-left: 11vw;
+        width: 100%;
+        height: 100%;
+    }
+
+    #vert #feed{
+        background-color: #eaedf1;
+        text-align: center;
+        width: 79vw;
+        height: 82.029vw;
+        margin: 0;
+        margin-left: 20vw;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+        overflow-y: auto;
+        border-radius: 5px;
+    }
+    #vert .vertical-menu {
+        background-color: #d2c9bc;
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+        float: left;
+        width: 18.5vw;
+        height: 82.029vw;
+        margin-left: 0vw;
+        margin-top: 0vw;
+        overflow-y: auto;
+    }
+
+    #vert .vertical-menu ul li a {
+        color: #452f6b;
+        display: block;
+        border: .3px solid #452f6b;
+        padding: 12px;
+        text-decoration: none;
+    }
+
+    #vert .vertical-menu ul li a:hover {
+        background-color: #452f6b;
+        color: white;
+        border: 1px solid white;
+    }
+
+    .vertical-menu a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    #meat{
+        background-color: #f2f2f2;
+        height: 104vw;
+        overflow-y: auto;
+    }
+
+    #meat form{
+        float: left;
+        width: 100%;
+    }
+
+    #meat form button{
+        background-color: #2f556b;
+        width: 100%;
+        height: 4vw;
+    }
+
+    #meat form #msg{
+        margin-top: 5vw;
+        text-align: center;
+    }
+
+    #meat form #select{
+        margin-top: 0vw;
+    }
+
+    #meat form #one{
+        margin-top: 5vw;
+    }
+
+    #meat form #ename{
+        margin-top: 10vw;
+    }
+
+    #meat form #two #body{
+        height: 25vw;
+    }
+
+    #meat form #three #note{
+        height: 10vw;
+    }
+
 }
 
 @media screen and (max-width: 1000px){
@@ -313,5 +499,80 @@
         background-color: #4CAF50;
         color: white;
     }
+
+    #meat{
+        background-color: #f2f2f2;
+        height: 104vw;
+        overflow-y: auto;
+    }
+
+    #meat form{
+        float: left;
+        width: 100%;
+    }
+
+    #meat form button{
+        background-color: #2f556b;
+        width: 100%;
+        height: 4vw;
+    }
+
+    #meat form #msg{
+        margin-top: 5vw;
+        text-align: center;
+    }
+
+    #meat form #select{
+        margin-top: 0vw;
+    }
+
+    #meat form #one{
+        margin-top: 5vw;
+    }
+
+    #meat form #ename{
+        margin-top: 10vw;
+    }
+
+    #meat form #two #body{
+        height: 25vw;
+    }
+
+    #meat form #three #note{
+        height: 10vw;
+    }
+
+}
+
+@media screen and (max-width: 700px){
+
+    #meat{
+        background-color: #f2f2f2;
+        height: 204vw;
+        overflow-y: auto;
+    }
+
+
+}
+
+@media screen and (max-width: 500px){
+
+    #meat{
+        background-color: #f2f2f2;
+        height: 304vw;
+        overflow-y: auto;
+    }
+
+
+}
+
+@media screen and (max-width: 400px){
+
+    #meat{
+        background-color: #f2f2f2;
+        height: 10504vw;
+        overflow-y: auto;
+    }
+
 
 }

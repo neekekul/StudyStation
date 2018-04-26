@@ -23,7 +23,7 @@
             </div>
         </div>
         <div id="meat" class="container-fluid">
-            <form action="/courseViewer/courseGuts/lessonViewer" method="post">
+            <form action="/courseViewer/courseGuts/lessonViewer" method="get">
                {{ csrf_field() }}
                    @if(count($lessons))
                     <div class="form-group" id="select">

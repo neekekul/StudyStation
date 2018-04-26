@@ -31,7 +31,7 @@ class HomeController extends Controller
         $lessons = Lesson::latest()->get();
         
         if (auth()->user()->type == 'instructor'){
-            return view('instructorHome', compact('lessons'));
+            return view('instructorHome', compact('lessons', 'instructors'));
         }
         else{
             return view('studentHome', compact('instructors', 'lessons'));
