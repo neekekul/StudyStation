@@ -6,7 +6,7 @@
             <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></button>
             <ul class="dropdown-menu">
                 <li><a href="#">Help</a></li>
-                <li><a href="#">Edit Account</a></li>
+                <li><a href="/editInstructor">Edit Account <img src="/uploads/icons/{{ auth()->user()->icon }}" style="width:20px; height:20px; float:right; border-radius: 50%;"></a></li>
                 <li class="divider"></li>
                 <li><a href="logout">Logout</a></li>
             </ul>

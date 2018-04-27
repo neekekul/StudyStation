@@ -19,6 +19,7 @@ class CreateLessonsTable extends Migration
             $table->foreign('course_id')->references('id')->on('courses');
             $table->string('title');
             $table->longText('body');
+            $table->string('image');
             $table->string('summary');
             $table->timestamps();
         });

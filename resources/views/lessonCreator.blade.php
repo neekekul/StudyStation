@@ -7,7 +7,7 @@
                 <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="#">Help</a></li>
-                    <li><a href="/editInstructor">Edit Account</a></li>
+                    <li><a href="/editInstructor">Edit Account <img src="/uploads/icons/{{ auth()->user()->icon }}" style="width:20px; height:20px; float:right; border-radius: 50%;"></a></li>
                     <li class="divider"></li>
                     <li><a href="/logout">Logout</a></li>
                 </ul>
@@ -20,7 +20,7 @@
             </div>
         </div>
         <div id="meat" class="container-fluid">
-            <form action="/lessonCreator" method="post">
+            <form action="/lessonCreator" enctype="multipart/form-data" method="post">
                {{ csrf_field() }}
                @include('layouts.message')
                <div class="form-group" id="select">
@@ -40,6 +40,10 @@
                 <div class="form-group" id="two">
                     <label for="body">Body:</label>
                     <textarea class="form-control" id="body" name="body" maxlength="13000"></textarea>
+                </div>
+                <div class="form-group" id="twohalf">
+                   <label for="image">Upload Image:</label>
+                    <input type="file" name="image" id="image">
                 </div>
                 <div class="form-group" id="three">
                     <label for="note">Note:</label>

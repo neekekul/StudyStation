@@ -18,8 +18,8 @@
             </a>
             </div>
         </div>
-        <div id="meat" class="container-fluid">
-        <div class="container-fluid" id="ereg">
+        <div id="meat" class="container-fluid" style="background-color: #d2c9bc;">
+        <div class="container-fluid" id="ereg" style="background-color: #d2c9bc;">
           <img src="/uploads/icons/{{ auth()->user()->icon }}" style="width:100px; height:100px; float:right; border-radius: 50%; margin-right: 10vw; margin-top:1vw;">
           <form method="post" enctype="multipart/form-data" style="float:right; width: 3vw; margin-top: 10vw;">
              {{ csrf_field() }}
