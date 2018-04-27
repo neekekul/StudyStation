@@ -50,17 +50,20 @@
         <div class="container-fluid" id="feed">
             @include('layouts.message')
             <div class="blog-header">
-                <h2 class="blog-title">Current Registration Data:</h2>
-                <p class="lead blog-description">The official example of a blog feed</p>
+                <h2 class="blog-title">Study Station's Activity Feed</h2>
+                <p class="lead blog-description"></p>
                 <br>
             </div>
             @if(count($lessons))
                @foreach($lessons as $lesson)
                     <div class="blog-post" style="width: 50vw;">
                         <h3 class="blog-post-title">{{ $lesson->title }}</h4>
-                        <p class="blog-post-meta">{{ $lesson->created_at->toFormattedDateString() }} </p>
+                        <p class="blog-post-meta">{{ $lesson->created_at->toFormattedDateString() }}&nbsp;by: {{ $lesson->course->user->username }}</p>
                         <h4>Body:</h4>
                         <p>{{ $lesson->body }}</p>
+                        @if($lesson->image)
+                            <img src="/uploads/images/{{ $lesson->image }}" style="width:400px; height:200px;">
+                        @endif
                         <h4>Summary:</h4>
                         <p>{{ $lesson->summary }}</p>
                         <br>

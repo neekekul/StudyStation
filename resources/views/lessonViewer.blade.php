@@ -9,7 +9,7 @@
                 <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="#">Help</a></li>
-                    <li><a href="/editInstructor">Edit Account</a></li>
+                    <li><a href="/editInstructor">Edit Account <img src="/uploads/icons/{{ auth()->user()->icon }}" style="width:20px; height:20px; float:right; border-radius: 50%;"></a></li>
                     <li class="divider"></li>
                     <li><a href="/logout">Logout</a></li>
                 </ul>
@@ -26,6 +26,9 @@
             <h3>Title: <small>{{ $lesson->title }}</small></h3>
             <br>
             <h3 style="word-wrap: break-word;">Body: <small>{{ $lesson->body }}</small></h3>
+            @if($lesson->image)
+                <h3><img src="/uploads/images/{{ $lesson->image }}" style="width:600px; height:400px;"></h3>
+            @endif
             <br>
             <h3>Summary: <small>{{ $lesson->summary }}</small></h3>
                 <div class="container-fluid" id="vert" style="margin-top:8vw;">
@@ -70,7 +73,6 @@
                                         <p>&nbsp;Comment: &nbsp;{{ $lessonComment->body }}</p>
                                     </div>
                                     <br>
-                                    <hr>
                                 @endforeach
                             @endif
                 </div>

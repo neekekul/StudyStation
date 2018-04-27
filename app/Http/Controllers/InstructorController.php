@@ -140,8 +140,17 @@ class InstructorController extends Controller
             'course' => 'required|integer',
             'title' => 'required|string|alpha_num|max:100',
             'body' => 'required|string|max:13000',
+            'image' => 'file|image',
             'note' => 'string|max:700',
         ]);
+        $request = request();
+        $filename = '';
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(700, 500)->save( public_path('/uploads/images/' . $filename) );
+
+        }
         $lessons = Lesson::latest()->get();
         $instructors= User::where('type','instructor')->get();
 
@@ -156,6 +165,7 @@ class InstructorController extends Controller
         $lesson->course_id = $courseID;
         $lesson->title = $title;
         $lesson->body = $body;
+        $lesson->image = $filename;
         $lesson->summary = $note;
         if ($lesson->save()){
             $msg = 'Lesson has been saved!';
@@ -194,7 +204,15 @@ class InstructorController extends Controller
 
     }
 
-    public function iconStore(Request $request){
+    public function iconStore(){
+
+        //first completely validate the users input
+        $this->validate(request(), [
+
+            'icon' => 'file|image',
+        ]);
+
+        $request = request();
 
         if($request->hasFile('icon')){
             $icon = $request->file('icon');
