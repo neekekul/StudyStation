@@ -38,7 +38,7 @@ class StudentController extends Controller
     }
   protected function getCourses(){
     $courses = Course::select('courses.name','courses.id', 'users.username')
-	->join('links', 'courses.instructor_id', '=', 'links.ins_id')
+	->join('links', 'courses.user_id', '=', 'links.ins_id')
 	->where('links.stu_id', '=', auth()->user()->id)
   ->join('users', 'links.ins_id', '=', 'users.id')
   ->where('users.id', '>', '0')
