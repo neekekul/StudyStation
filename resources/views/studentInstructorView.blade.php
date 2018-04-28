@@ -11,7 +11,7 @@
                 <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
-        <h1><strong>{{ $ins->username }}</strong></h1>
+        <h1><strong>{{ $instruct->username }}</strong></h1>
         <form method="post" action="/studentHome/search">
            {{ csrf_field() }}
             <div class="input-group">
@@ -34,42 +34,8 @@
             </a>
         </div>
     </div>
-    <div class="container-fluid" id="vert">
-        <div class="vertical-menu">
-           <ul class="nav nav-pills nav-stacked" role="tablist">
-               <li><a href="studentCourseView">View Courses</a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-               <li><a href="#"></a></li>
-            </ul>
-        </div>
-        <div class="container-fluid" id="feed">
-            @include('layouts.message')
-           <div id="meat" class="container-fluid">
+           <div id="meat" class="container-fluid" style="background-color: #eaedf1;">
+               @include('layouts.message')
             <form action="/courseViewer/courseGuts" method="get">
                {{ csrf_field() }}
                    @if(count($courses))
@@ -89,14 +55,22 @@
                     @endif
                     @include('layouts.errors')
             </form>
-            <form action="/linktest" method="get" style="margin-top: 0vw;">
+            @if($link === null)
+            <form action="/link" method="get" style="margin-top: 0vw;">
                {{ csrf_field() }}
                     <div class="form-group">
-                        <button type="submit" name="insID" class="btn btn-primary" value="{{$ins->id}}"><strong>Link to {{ $ins->username }}</strong></button>
+                        <button type="submit" name="insID" class="btn btn-primary" value="{{$instruct->id}}"><strong>Link to {{ $instruct->username }}</strong></button>
                     </div>
                     @include('layouts.errors')
             </form>
+            @else
+            <form action="/unlink" method="get" style="margin-top: 0vw;">
+               {{ csrf_field() }}
+                    <div class="form-group">
+                        <button type="submit" name="insID" class="btn btn-primary" value="{{$instruct->id}}"><strong>UnLink to {{ $instruct->username }}</strong></button>
+                    </div>
+                    @include('layouts.errors')
+            </form>
+            @endif
         </div>
-        </div>
-    </div>
 @endsection

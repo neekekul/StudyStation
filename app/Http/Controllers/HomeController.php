@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\User;
 use App\Course;
 use App\Lesson;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -29,12 +30,13 @@ class HomeController extends Controller
     {
         $instructors= User::where('type','instructor')->get();
         $lessons = Lesson::latest()->get();
+        $user = Auth::user();
         
         if (auth()->user()->type == 'instructor'){
-            return view('instructorHome', compact('lessons', 'instructors'));
+            return view('instructorHome', compact('lessons', 'instructors', 'user'));
         }
         else{
-            return view('studentHome', compact('instructors', 'lessons'));
+            return view('studentHome', compact('instructors', 'lessons', 'user'));
         }
     }
 }

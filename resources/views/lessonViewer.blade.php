@@ -33,20 +33,12 @@
             <h3>Summary: <small>{{ $lesson->summary }}</small></h3>
                 <div class="container-fluid" id="vert" style="margin-top:8vw;">
                   <form method="post">
-                            <div class="form-group" id="select">
-                            <!--<label for="sel1">Select Lesson from "{{ $course->name }}": (select one)</label>-->
-                            <select class="form-control" id="sel1" name="lesson" size="1" required>
-                                    <option value="{{ $lesson->id }}" selected>
-                                        {{ $lesson->title }}
-                                    </option>
-                            </select>
-                            </div>
                             <div class="form-group" id="two">
                                 <label for="body">{{ auth()->user()->username }} add a Comment:</label>
                                 <textarea class="form-control" id="body" name="body" maxlength="2000" style="height:5vw;"></textarea>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary"><strong>COMMENT</strong></button>
+                                <button type="submit" name="lesson" class="btn btn-primary" value="{{ $lesson->id }}"><strong>COMMENT</strong></button>
                             </div>
                             @include('layouts.errors')
                     </form>
@@ -58,15 +50,15 @@
                         </div>
                             @if(count($lesson->comments))
                                @foreach($lesson->comments as $lessonComment)
-                                   @if($lessonComment->user_id == $lesson->course->user_id)
+                                   @if($lessonComment->user_id == $lesson->course->user->id)
                                     <div class="blog-post" style="width: 50vw; border: 2px solid #8bc34a; margin-left:3vw;">
-                                       <img src="/uploads/icons/{{ auth()->user()->icon }}" style="float:right; width:100px; height:100px; border-radius:50%; margin-top:.5vw; margin-right:1vw;">
-                                        <h3 class="blog-post-title">(Owner)&nbsp;{{ auth()->user()->username }}: <small>{{ auth()->user()->type }}</small></h3>
+                                       <img src="/uploads/icons/{{ $lessonComment->user->icon }}" style="float:right; width:100px; height:100px; border-radius:50%; margin-top:.5vw; margin-right:1vw;">
+                                        <h3 class="blog-post-title">(Owner)&nbsp;{{ $lessonComment->user->username }}: <small>{{ $lessonComment->user->type }}</small></h3>
 
                                     @else
-                                      <img src="/uploads/icons/{{ auth()->user()->icon }}" style="float:right; width:100px; height:100px; border-radius:50%; margin-top:.5vw; margin-right:1vw;">
+                                      <img src="/uploads/icons/{{ $lessonComment->user->icon }}" style="float:right; width:100px; height:100px; border-radius:50%; margin-top:.5vw; margin-right:5.6vw;">
                                        <div class="blog-post" style="width: 50vw; border: 2px solid #2f556b;">
-                                        <h3 class="blog-post-title">&nbsp;{{ auth()->user()->username }}: <small>{{ auth()->user()->type }}</small></h3>
+                                        <h3 class="blog-post-title">&nbsp;{{ $lessonComment->user->username }}: <small>{{ $lessonComment->user->type }}</small></h3>
 
                                     @endif
                                         <p class="blog-post-meta">&nbsp;Created: &nbsp;<strong>{{ $lessonComment->created_at->diffForHumans() }}</strong></p>

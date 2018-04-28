@@ -39,13 +39,15 @@ Route::post('/editInstructor/username', 'InstructorController@editUsernameStore'
 Route::get('/courseViewer', 'InstructorController@courseShow');
 Route::get('/courseViewer/courseGuts', 'InstructorController@courseGuts');
 Route::get('/studentCourseView','StudentController@getCourses');
+Route::get('/linkedInstructors', 'StudentController@getLinks');
 
 Route::get('/courseViewer/courseGuts/lessonViewer', 'InstructorController@lessonShow');
 Route::post('/courseViewer/courseGuts/lessonViewer', 'InstructorController@commentStore');
 
 Route::post('/studentHome/search','StudentController@instructorFind');
 Route::get('/studentInstructorView','StudentController@onStudentViewCourseCreate');
-Route::get('/linktest','StudentController@makeLink');
+Route::get('/link','StudentController@makeLink');
+Route::get('/unlink', 'StudentController@unmakeLink');
 
 
 

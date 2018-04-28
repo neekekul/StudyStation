@@ -8,7 +8,7 @@
                 <li><a href="#">Help</a></li>
                 <li><a href="/editInstructor">Edit Account <img src="/uploads/icons/{{ auth()->user()->icon }}" style="width:20px; height:20px; float:right; border-radius: 50%;"></a></li>
                 <li class="divider"></li>
-                <li><a href="logout">Logout</a></li>
+                <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
         <h1><strong>{{ auth()->user()->username }}</strong></h1>
@@ -37,32 +37,38 @@
     <div class="container-fluid" id="vert">
         <div class="vertical-menu">
            <ul class="nav nav-pills nav-stacked" role="tablist">
-               <li><a href="studentCourseView">View Courses</a></li>
-               <li><a href="#">View Linked Instructors</a></li>
+               <li><a href="/studentCourseView">View Courses</a></li>
+               <li><a href="/linkedInstructors">View Linked Instructors</a></li>
                <li><a href="#"></a></li>
 
             </ul>
         </div>
-      <h3 style="text-align:center;">@include('layouts.message')</h3>
         <div class="container-fluid" id="feed">
             @include('layouts.message')
             <div class="blog-header">
-                <h2 class="blog-title">Current Registration Data:</h2>
-                <p class="lead blog-description">The official example of a blog feed</p>
+                <h2 class="blog-title">Study Station's Activity Feed</h2>
+                <p class="lead blog-description" style="font-size:1vw;">See here the lessons that have been created by instructors you have linked yourself to.</p>
                 <br>
             </div>
             @if(count($lessons))
                @foreach($lessons as $lesson)
-                    <div class="blog-post" style="width: 50vw;">
-                        <h3 class="blog-post-title">{{ $lesson->title }}</h4>
-                        <p class="blog-post-meta">{{ $lesson->created_at->toFormattedDateString() }} </p>
-                        <h4>Body:</h4>
-                        <p>{{ $lesson->body }}</p>
-                        <h4>Summary:</h4>
-                        <p>{{ $lesson->summary }}</p>
-                        <br>
-                        <hr>
-                    </div>
+                   @foreach($user->links as $link)
+                       @if($lesson->course->user->id == $link->link_id)
+                            <div class="blog-post" style="width: 50vw;">
+                                <h3 class="blog-post-title">{{ $lesson->title }}</h4>
+                                <p class="blog-post-meta">{{ $lesson->created_at->toFormattedDateString() }}&nbsp;by: {{ $lesson->course->user->username }}</p>
+                                <h4>Body:</h4>
+                                <p>{{ $lesson->body }}</p>
+                                @if($lesson->image)
+                                    <img src="/uploads/images/{{ $lesson->image }}" style="width:400px; height:200px;">
+                                @endif
+                                <h4>Summary:</h4>
+                                <p>{{ $lesson->summary }}</p>
+                                <br>
+                                <hr>
+                            </div>
+                        @endif
+                    @endforeach
                 @endforeach
             @endif
         </div>

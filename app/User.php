@@ -30,4 +30,8 @@ class User extends Authenticatable
     public function courses(){
         return $this->hasMany(Course::class);
     }
+
+    public function links(){
+        return $this->hasMany(Link::class);
+    }
 }

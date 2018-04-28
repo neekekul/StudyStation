@@ -7,12 +7,19 @@ use App\Course;
 use App\User;
 use App\Link;
 use App\Lesson;
+use Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Controller;
 
 class StudentController extends Controller
 {
+
+    //all functions must be authenticated in this controller by the 'auth' middleware. Except logout of course.
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
   protected function onStudentViewCourseCreate(){
       return view('studentCourseViewer');
 
@@ -24,17 +31,49 @@ class StudentController extends Controller
         'insID' => 'required|integer',
     ]);
     $ins = Request('insID');
+    $msg = '';
     $link = new Link;
-    $link->stu_id = auth()->user()->id;
-    $link->ins_id = $ins;
+    $link->user_id = auth()->user()->id;
+    $link->link_id = $ins;
     if ($link->save()){
         $msg = 'Link has been saved!';
     }else{
         $msg = 'Link failed to be saved..';
     }
     $instructors= User::where('type','instructor')->get();
-    $lessons = Lesson::latest()->get();
-    return view ('studentHome', compact('ins', 'lessons', 'instructors'));
+    $user = Auth::user();
+    $link = Link::where('link_id', $ins)->first();
+    $courses = Course::where('user_id', $ins)->get();
+    $instruct = User::where('id', $ins)->first();
+    return view ('studentInstructorView', compact('instruct', 'instructors', 'user', 'msg', 'link', 'courses'));
+    }
+
+    public function unmakeLink(){
+
+        $this->validate(request(), [
+
+            'insID' => 'required|integer',
+        ]);
+
+        $ins = Request('insID');
+
+        $msg = '';
+
+        $link = Link::where('link_id', $ins)->first();
+
+        if($link->delete()){
+            $msg = 'Link Correctly Terminated!';
+        }else{
+            $msg = 'Link was not deleted properly!';
+        }
+
+        $instructors= User::where('type','instructor')->get();
+        $user = Auth::user();
+        $link = Link::where('link_id', $ins)->first();
+        $courses = Course::where('user_id', $ins)->get();
+        $instruct = User::where('id', $ins)->first();
+
+        return view('studentInstructorView', compact('instruct', 'instructors', 'user', 'msg', 'link', 'courses'));
     }
   protected function getCourses(){
     $courses = Course::select('courses.name','courses.id', 'users.username')
@@ -44,8 +83,16 @@ class StudentController extends Controller
   ->where('users.id', '>', '0')
 	->get();
 
-  return view('studentCourseViewer', compact('courses', 'instructors'));
+  return view('studentHome', compact('courses', 'instructors'));
   }
+
+    public function getLinks(){
+
+        $user = Auth::user();
+        $instructors = User::where('type', 'instructor')->get();
+        return view('linkedInstructorView', compact('user', 'instructors'));
+    }
+
     public function instructorFind(){
         //first completely validate the users input
         $this->validate(request(), [
@@ -57,10 +104,12 @@ class StudentController extends Controller
 
         $instructors= User::where('type','instructor')->get();
 
-        $ins = User::where('id', $instructorID)->first();
+        $instruct = User::where('id', $instructorID)->first();
 
-        $courses = Course::where('instructor_id', $instructorID)->get();
+        $link = Link::where('link_id', $instructorID)->first();
 
-        return view('studentInstructorView', compact('instructors', 'ins', 'courses'));
+        $courses = Course::where('user_id', $instructorID)->get();
+
+        return view('studentInstructorView', compact('instructors', 'instruct', 'courses', 'link'));
     }
 }
