@@ -1,5 +1,5 @@
 #okay{
-    background-color: #f2f2f2;
+    background-color: #eaedf1;
     max-width: 100%;
     overflow-x: hidden;
     font-family: clone-rounded-latin, sans-serif;
@@ -19,7 +19,7 @@
 }
 
 #meat{
-    background-color: #f2f2f2;
+    background-color: #eaedf1;
     height: 41vw;
     overflow-y: auto;
 }
@@ -74,7 +74,7 @@
 }
 
 #vert{
-    background-color: #f2f2f2;
+    background-color: #eaedf1;
     height: 41vw;
     width: 100%;
     margin-top: .009vw;
@@ -87,8 +87,8 @@
 }
 
 #vert #feed{
-    background-color: #eaedf1;
-    text-align: left;
+    background-color: #f2f2f2;
+    text-align: center;
     width: 87vw;
     height: 39vw;
     margin-top: 0;
@@ -102,8 +102,8 @@
 #vert #commentfeed{
     background-color: #d2c9bc;
     text-align: left;
-    width: 60%;
-    height: 100%;
+    width: 65%;
+    height: 61%;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
     overflow-y: auto;
     word-wrap: break-word;

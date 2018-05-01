@@ -27,10 +27,22 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * Retrieve the Courses associated with a specific User by a foreign key.
+     *
+     * @params  n/a
+     * @return  php variable $this that has many Courses.
+     */
     public function courses(){
         return $this->hasMany(Course::class);
     }
 
+    /**
+     * Retrieve the Links associated with a specific User by a foreign key.
+     *
+     * @params  n/a
+     * @return  php variable $this that has many Links.
+     */
     public function links(){
         return $this->hasMany(Link::class);
     }

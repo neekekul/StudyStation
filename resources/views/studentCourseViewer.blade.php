@@ -21,25 +21,31 @@
             </div>
         </div>
         <div id="meat" class="container-fluid" style="height: 54vw;">
-            <form action="#" method="get">
+            <form action="/courseViewer/courseGuts" method="get">
                {{ csrf_field() }}
-                   @if(count($courses))
-                    <div class="form-group" id="select">
+                   @if(count($user->links))
+                    <div class="form-group" id="select" style="margin-top:5vw;">
                     <label for="sel1">Select Course: (select one)</label>
                     <select class="form-control" id="sel1" name="course" required>
-    		            @foreach ($courses as $course)
-                            <option value="{{ $course->id }}">
-                                {{ $course->name }}
-                                {{'--Created By: '}}
-                                {{ $course->username }}
+                        @foreach($user->links as $link)
+                            @foreach ($courses as $course)
+                               @if($course->user->id == $link->link_id)
+                                    <option value="{{ $course->id }}">
+                                        {{ $course->name }}
+                                        {{'--Created By: '}}
+                                        {{ $course->user->username }}
 
-                            </option>
+                                    </option>
+                                @endif
+                            @endforeach
                         @endforeach
   		            </select>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary"><strong>VIEW</strong></button>
                     </div>
+                    @else
+                            <h1>Don't see anything? Try linking to an instructor. (search bar)</h1>
                     @endif
                     @include('layouts.errors')
             </form>

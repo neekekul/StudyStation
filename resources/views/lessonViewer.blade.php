@@ -21,20 +21,20 @@
             </a>
             </div>
         </div>
-        <div id="meat" class="container-fluid">
+        <div id="meat" class="container-fluid" style="padding-left: 5vw; padding-right: 5vw; text-align:center">
            <h2>{{ $course->name }} Lesson Data:</h2>
-            <h3>Title: <small>{{ $lesson->title }}</small></h3>
+            <h3>Title: {{ $lesson->title }}</h3>
             <br>
-            <h3 style="word-wrap: break-word;">Body: <small>{{ $lesson->body }}</small></h3>
+            <h3 style="word-wrap: break-word;">Body: <br> <small>{{ $lesson->body }}</small></h3>
             @if($lesson->image)
                 <h3><img src="/uploads/images/{{ $lesson->image }}" style="width:600px; height:400px;"></h3>
             @endif
             <br>
-            <h3>Summary: <small>{{ $lesson->summary }}</small></h3>
+            <h3>Summary: <br><small>{{ $lesson->summary }}</small></h3>
                 <div class="container-fluid" id="vert" style="margin-top:8vw;">
-                  <form method="post">
+                  <form method="post" style="width:65%; margin-left:17.4%;">
                             <div class="form-group" id="two">
-                                <label for="body">{{ auth()->user()->username }} add a Comment:</label>
+                                <label for="body" style="text-align:center; font-size:2vw;">{{ auth()->user()->username }} add a comment:</label>
                                 <textarea class="form-control" id="body" name="body" maxlength="2000" style="height:5vw;"></textarea>
                             </div>
                             <div class="form-group">
@@ -56,7 +56,7 @@
                                         <h3 class="blog-post-title">(Owner)&nbsp;{{ $lessonComment->user->username }}: <small>{{ $lessonComment->user->type }}</small></h3>
 
                                     @else
-                                      <img src="/uploads/icons/{{ $lessonComment->user->icon }}" style="float:right; width:100px; height:100px; border-radius:50%; margin-top:.5vw; margin-right:5.6vw;">
+                                      <img src="/uploads/icons/{{ $lessonComment->user->icon }}" style="float:right; width:100px; height:100px; border-radius:50%; margin-top:.5vw; margin-right:4.3vw;">
                                        <div class="blog-post" style="width: 50vw; border: 2px solid #2f556b;">
                                         <h3 class="blog-post-title">&nbsp;{{ $lessonComment->user->username }}: <small>{{ $lessonComment->user->type }}</small></h3>
 

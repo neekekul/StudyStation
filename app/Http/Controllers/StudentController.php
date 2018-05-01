@@ -21,7 +21,11 @@ class StudentController extends Controller
         $this->middleware('auth');
     }
   protected function onStudentViewCourseCreate(){
-      return view('studentCourseViewer');
+
+      $user = Auth::user();
+      $courses = Course::all();
+
+      return view('studentCourseViewer', compact('user', 'courses'));
 
     }
 
@@ -75,16 +79,6 @@ class StudentController extends Controller
 
         return view('studentInstructorView', compact('instruct', 'instructors', 'user', 'msg', 'link', 'courses'));
     }
-  protected function getCourses(){
-    $courses = Course::select('courses.name','courses.id', 'users.username')
-	->join('links', 'courses.user_id', '=', 'links.ins_id')
-	->where('links.stu_id', '=', auth()->user()->id)
-  ->join('users', 'links.ins_id', '=', 'users.id')
-  ->where('users.id', '>', '0')
-	->get();
-
-  return view('studentHome', compact('courses', 'instructors'));
-  }
 
     public function getLinks(){
 

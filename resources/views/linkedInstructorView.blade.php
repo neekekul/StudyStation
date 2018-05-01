@@ -16,7 +16,7 @@
             </ul>
         </div>
         <h1><strong>{{ auth()->user()->username }}</strong></h1>
-        <form method="post" action="studentHome/search">
+        <form method="post" action="/studentHome/search">
            {{ csrf_field() }}
             <div class="input-group">
                 <input id="email" type="text" class="form-control" name="search" placeholder="Search" autocomplete="Off" maxlength="300" list="students">
@@ -40,23 +40,24 @@
     </div>
     <div id="meat" class="container-fluid">
         @if(count($user->links))
-                    <div class="form-group" id="select" style="margin-top:5vw;">
+                    <div class="form-group" id="select" style="margin-top:5vw; width:50vw; margin-left: 23vw;">
                                 <div class="alert alert-info">
                                     <ul class="list-group">
                                        <h2 class="list-group-header" style="text-align: center;"><strong>{{ auth()->user()->username }}s Linked Instructors</strong></h2>
                                         @foreach ($user->links as $link)
                                            @foreach($instructors as $instructor)
                                                @if($instructor->id == $link->link_id)
-                                                    <li class="list-group-item" style="background-color: #899372; color: white;">
-                                                        {{ $instructor->username  }}
-                                                        <span class="badge">{{ $instructor->id }}</span>
-                                                    </li>
+                                                             <li class="list-group-item" style="background-color: #899372; color: white; text-align: center; font-size: 2vw;">
+                                                                        {{ $instructor->username  }}
+                                                            </li>
                                                 @endif
                                             @endforeach
                                         @endforeach
                                     </ul>
                         </div>
                     </div>
+        @else
+                <h1>Don't see anything? Try linking to an instructor. (search bar)</h1>
         @endif
     </div>
 

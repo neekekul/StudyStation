@@ -56,9 +56,11 @@
             </div>
             @if(count($lessons))
                @foreach($lessons as $lesson)
-                    <div class="blog-post" style="width: 50vw;">
+                    <div class="blog-post" style="width: 50vw; border: solid 1px #d2c9bc;">
                         <h3 class="blog-post-title">{{ $lesson->title }}</h4>
                         <p class="blog-post-meta">{{ $lesson->created_at->toFormattedDateString() }}&nbsp;by: {{ $lesson->course->user->username }}</p>
+                        <p class="blog-post-meta">({{$lesson->created_at->diffForHumans()}})</p>
+                        <p class="blog-post-meta">from: {{ $lesson->course->name }}</p>
                         <h4>Body:</h4>
                         <p>{{ $lesson->body }}</p>
                         @if($lesson->image)

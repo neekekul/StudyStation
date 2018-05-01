@@ -13,7 +13,7 @@ class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
-     *
+     * All functions must be authenticated in this controller by the 'auth' middleware. Except logout of course.
      * @return void
      */
     public function __construct()
@@ -22,9 +22,11 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Show the applications home screen depending on user type.
+     * Passing relevant
      *
-     * @return \Illuminate\Http\Response
+     * @return view('instructorHome', compact('lessons', 'instructors', 'user'))
+     * @return view('studentHome', compact('instructors', 'lessons', 'user'))
      */
     public function show()
     {

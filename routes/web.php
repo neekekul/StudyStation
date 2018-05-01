@@ -38,7 +38,7 @@ Route::post('/editInstructor/username', 'InstructorController@editUsernameStore'
 
 Route::get('/courseViewer', 'InstructorController@courseShow');
 Route::get('/courseViewer/courseGuts', 'InstructorController@courseGuts');
-Route::get('/studentCourseView','StudentController@getCourses');
+Route::get('/studentCourseView','StudentController@onStudentViewCourseCreate');
 Route::get('/linkedInstructors', 'StudentController@getLinks');
 
 Route::get('/courseViewer/courseGuts/lessonViewer', 'InstructorController@lessonShow');
