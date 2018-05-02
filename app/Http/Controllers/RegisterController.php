@@ -10,17 +10,35 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-    //
+    /**
+     * Create a new controller instance.
+     * All functions must be authenticated in this controller by the 'auth' middleware. Except logout of course.
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware('guest');
     }
 
+    /**
+     * Show the application's registration view.
+     * Passing relevant data through the compact() to the view itself in the form of php variables.
+     *
+     * @return view('registration')
+     *
+     */
     protected function create()
     {
         return view('registration');
     }
 
+    /**
+     * Handles registering the users input into the database as a new user!
+     * Passing relevant data through the compact() to the view itself in the form of php variables.
+     *
+     * @return view('/registration', compact('msg'))
+     *
+     */
     public function store(){
 
         //first completely validate the users input

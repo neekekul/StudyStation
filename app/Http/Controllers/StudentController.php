@@ -15,20 +15,42 @@ use App\Http\Controllers\Controller;
 class StudentController extends Controller
 {
 
-    //all functions must be authenticated in this controller by the 'auth' middleware. Except logout of course.
+    /**
+     * Create a new controller instance.
+     * All functions must be authenticated in this controller by the 'auth' middleware.
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware('auth');
+
     }
+
+    /**
+     * Show the applications student course viewer view.
+     * Passing relevant data through the compact() to the view itself in the form of php variables.
+     *
+     * @return view('studentCourseViewer', compact('user', 'courses', 'instructors'))
+     *
+     */
   protected function onStudentViewCourseCreate(){
 
       $user = Auth::user();
       $courses = Course::all();
+      $instructors= User::where('type','instructor')->get();
 
-      return view('studentCourseViewer', compact('user', 'courses'));
+      return view('studentCourseViewer', compact('user', 'courses', 'instructors'));
 
     }
 
+
+    /**
+     * Handles setting the links between users in the student course viewer view.
+     * Passing relevant data through the compact() to the view itself in the form of php variables.
+     *
+     * @return view ('studentInstructorView', compact('instruct', 'instructors', 'user', 'msg', 'link', 'courses'))
+     *
+     */
   protected function makeLink(){
     $this->validate(request(), [
 
@@ -52,6 +74,13 @@ class StudentController extends Controller
     return view ('studentInstructorView', compact('instruct', 'instructors', 'user', 'msg', 'link', 'courses'));
     }
 
+    /**
+     * Handles unsetting the links between users in the student course viewer view.
+     * Passing relevant data through the compact() to the view itself in the form of php variables.
+     *
+     * @return view('studentInstructorView', compact('instruct', 'instructors', 'user', 'msg', 'link', 'courses'))
+     *
+     */
     public function unmakeLink(){
 
         $this->validate(request(), [
@@ -80,6 +109,13 @@ class StudentController extends Controller
         return view('studentInstructorView', compact('instruct', 'instructors', 'user', 'msg', 'link', 'courses'));
     }
 
+    /**
+     * Handles retrieving all the links present between the authenticated user and the rest.
+     * Passing relevant data through the compact() to the view itself in the form of php variables.
+     *
+     * @return view('linkedInstructorView', compact('user', 'instructors'))
+     *
+     */
     public function getLinks(){
 
         $user = Auth::user();
@@ -87,6 +123,13 @@ class StudentController extends Controller
         return view('linkedInstructorView', compact('user', 'instructors'));
     }
 
+    /**
+     * Show the applications student instructor viewer view.
+     * Passing relevant data through the compact() to the view itself in the form of php variables.
+     *
+     * @return view('studentInstructorView', compact('instructors', 'instruct', 'courses', 'link'))
+     *
+     */
     public function instructorFind(){
         //first completely validate the users input
         $this->validate(request(), [

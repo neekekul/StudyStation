@@ -23,7 +23,7 @@ class HomeController extends Controller
 
     /**
      * Show the applications home screen depending on user type.
-     * Passing relevant
+     * Passing relevant data through the compact() to the view itself in the form of php variables.
      *
      * @return view('instructorHome', compact('lessons', 'instructors', 'user'))
      * @return view('studentHome', compact('instructors', 'lessons', 'user'))

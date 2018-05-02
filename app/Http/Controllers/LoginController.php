@@ -13,18 +13,37 @@ use Illuminate\Support\Facades\DB;
 class LoginController extends Controller
 {
     protected $redirectTo = 'instructorHome';
-    //
+    /**
+     * Create a new controller instance.
+     * All functions must be authenticated in this controller by the 'auth' middleware. Except logout of course.
+     * @return void
+     */
     public function __construct()
     {
         $this->middleware('guest')->except('destroy');
     }
 
+    /**
+     * Show the application's Login view.
+     * Passing relevant data through the compact() to the view itself in the form of php variables.
+     *
+     * @return view('Login')
+     *
+     */
     protected function onInstructorCreate(){
         //create the instructor login view
         //display it route it, whatever you wanna call it
         return view('Login');
     }
 
+    /**
+     * Handles authenticating a users final request for login permission in the Login view.
+     * Passing relevant data through the compact() to the view itself in the form of php variables.
+     *
+     * @return redirect('/home')
+     * @return back()->withErrors(['message' => 'username or password is incorrect!']);
+     *
+     */
     public function instructorSession(){
         //completely validate the input or request
         $this->validate(request(), [

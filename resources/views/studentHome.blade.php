@@ -3,16 +3,15 @@
 @section('content')
 <div class="container-fluid" id="main">
         <div class="dropdown">
-            <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></button>
+            <button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger"></span></button>
             <ul class="dropdown-menu">
-                <li><a href="#">Help</a></li>
                 <li><a href="/editInstructor">Edit Account <img src="/uploads/icons/{{ auth()->user()->icon }}" style="width:20px; height:20px; float:right; border-radius: 50%;"></a></li>
                 <li class="divider"></li>
                 <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
         <h1><strong>{{ auth()->user()->username }}</strong></h1>
-        <form method="post" action="studentHome/search">
+        <form method="post" action="/studentHome/search">
            {{ csrf_field() }}
             <div class="input-group">
                 <input id="email" type="text" class="form-control" name="search" placeholder="Search" autocomplete="Off" maxlength="300" list="students">
@@ -39,7 +38,6 @@
            <ul class="nav nav-pills nav-stacked" role="tablist">
                <li><a href="/studentCourseView">View Courses</a></li>
                <li><a href="/linkedInstructors">View Linked Instructors</a></li>
-               <li><a href="#"></a></li>
 
             </ul>
         </div>
