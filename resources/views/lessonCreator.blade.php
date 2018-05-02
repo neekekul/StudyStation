@@ -61,7 +61,7 @@
                     <input type="file" name="image" id="image">
                 </div>
                 <div class="form-group" id="three">
-                    <label for="note">Note:</label>
+                    <label for="note">Summary:</label>
                     <textarea class="form-control" id="note" name="note" maxlength="700"></textarea>
                 </div>
                 <div class="form-group">

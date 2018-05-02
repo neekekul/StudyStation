@@ -417,6 +417,7 @@ class InstructorController extends Controller
     }
 
 
+
     public function destroy(){
 
         auth()->logout();
